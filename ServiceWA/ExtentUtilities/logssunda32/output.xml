@@ -1,0 +1,2965 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.7 on win32)" generated="2026-03-14T00:33:14.376863" rpa="false" schemaversion="5">
+<suite id="s1" name="LinkableServiceWAServices" source="D:\Users\snatarajan\Desktop\Sundar\ServiceWAMobile\ServiceWA\ServiceWA\ExtentUtilities\..\rf-tests\LinkableServiceWAServices.robot">
+<kw name="Extent Report Creation" owner="ExtentReportListener" type="SETUP">
+<status status="PASS" start="2026-03-14T00:33:15.226946" elapsed="0.000522"/>
+</kw>
+<test id="s1-t1" name="Stability_TC_01_Mobile validate Linkable service FishCatchWA" line="19">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>*************************************** User to Linkable service FishCatchWA from</arg>
+<arg>Mobile app ***************************************</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.228526" elapsed="0.000531"/>
+</kw>
+<kw name="Load Config Properties Data" owner="PropertyUtilities">
+<kw name="Read Properties" owner="ReadConfig_Properties">
+<msg time="2026-03-14T00:33:15.232718" level="INFO">{'ConnectionURL': 'http://sundarnatarajan_iqyk45:wtYGx3ewdxiUVMBvSFX8@hub-cloud.browserstack.com/wd/hub', 'App_Environment': 'QA', 'TestType': 'smoke', 'App_Version': 'Android - Version 3.95.019 (92) &amp; iOS - 3.95.026 (72)', 'QA_URL': 'NA', 'MobileTestExecutionPlatform': 'BrowserStack', 'App_Path_Android': 'bs://0882dc2c9caaa9fac3f13d49486c913c13e48550 ', 'App_Path_iOS': 'bs://2252459fbfdeb65d27a17e8b5a0761a3180cc5fc', 'ExecutionPlatform': 'Mobile', 'OS_ExecutionPlatform': 'IOS', 'Orientation': 'PORTRAIT', 'AndroidDeviceName': 'Google Pixel 9', 'iOSDeviceName': 'iPhone 15 Pro', 'UserAccount': 'Batch1', 'App_URL': 'NA', 'Browser': 'chrome', 'PIPELINE_EXECUTION': 'false', 'CaptureScreenShotsOnlyForFailure': 'False', 'BASE_URL': 'na'}</msg>
+<msg time="2026-03-14T00:33:15.232718" level="INFO">&amp;{Load Prop} = { ConnectionURL=http://sundarnatarajan_iqyk45:wtYGx3ewdxiUVMBvSFX8@hub-cloud.browserstack.com/wd/hub | App_Environment=QA | TestType=smoke | App_Version=Android - Version 3.95.019 (92) &amp; iOS - 3.95.02...</msg>
+<var>&amp;{Load Prop}</var>
+<arg>${PROPERTY FILE PATH}</arg>
+<status status="PASS" start="2026-03-14T00:33:15.229588" elapsed="0.003130"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Load Prop}[ConnectionURL]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.232718" elapsed="0.001071"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.234309" level="INFO">Environment variable 'MobileTestExecutionPlatform' set to value 'BrowserStack'.</msg>
+<arg>MobileTestExecutionPlatform</arg>
+<arg>${Load Prop}[MobileTestExecutionPlatform]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.233789" elapsed="0.000520"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.234309" level="INFO">Environment variable 'ANDROID_DEVICE_NAME' set to value 'Google Pixel 9'.</msg>
+<arg>ANDROID_DEVICE_NAME</arg>
+<arg>${Load Prop}[AndroidDeviceName]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.234309" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.234830" level="INFO">Environment variable 'IOS_DEVICE_NAME' set to value 'iPhone 15 Pro'.</msg>
+<arg>IOS_DEVICE_NAME</arg>
+<arg>${Load Prop}[iOSDeviceName]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.234309" elapsed="0.000521"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.234830" level="INFO">Environment variable 'CONNECTION_URL' set to value 'http://sundarnatarajan_iqyk45:wtYGx3ewdxiUVMBvSFX8@hub-cloud.browserstack.com/wd/hub'.</msg>
+<arg>CONNECTION_URL</arg>
+<arg>${Load Prop}[ConnectionURL]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.234830" elapsed="0.000518"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.235348" level="INFO">Environment variable 'TEST_TYPE' set to value 'smoke'.</msg>
+<arg>TEST_TYPE</arg>
+<arg>${Load Prop}[TestType]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.235348" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.235348" level="INFO">Environment variable 'USER_ACCOUNT' set to value 'Batch1'.</msg>
+<arg>USER_ACCOUNT</arg>
+<arg>${Load Prop}[UserAccount]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.235348" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.235927" level="INFO">Environment variable 'PIPELINE_EXECUTION' set to value 'false'.</msg>
+<arg>PIPELINE_EXECUTION</arg>
+<arg>${Load Prop}[PIPELINE_EXECUTION]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.235348" elapsed="0.000579"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.235927" level="INFO">Environment variable 'MOBILE_VIEW' set to value 'NA'.</msg>
+<arg>MOBILE_VIEW</arg>
+<arg>${Load Prop}[QA_URL]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.235927" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.235927" level="INFO">Environment variable 'EXECUTION_PLATFORM' set to value 'Mobile'.</msg>
+<arg>EXECUTION_PLATFORM</arg>
+<arg>${Load Prop}[ExecutionPlatform]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.235927" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.236443" level="INFO">Environment variable 'APP_URL' set to value 'NA'.</msg>
+<arg>APP_URL</arg>
+<arg>${Load Prop}[App_URL]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.236443" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.236443" level="INFO">Environment variable 'BROWSER' set to value 'chrome'.</msg>
+<arg>BROWSER</arg>
+<arg>${Load Prop}[Browser]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.236443" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.236443" level="INFO">Environment variable 'MOBILE_VIEW' set to value 'NA'.</msg>
+<arg>MOBILE_VIEW</arg>
+<arg>${Load Prop}[QA_URL]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.236443" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.236443" level="INFO">Environment variable 'CaptureScreenShotsOnlyForFailure' set to value 'False'.</msg>
+<arg>CaptureScreenShotsOnlyForFailure</arg>
+<arg>${Load Prop}[CaptureScreenShotsOnlyForFailure]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.236443" elapsed="0.000701"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.237144" level="INFO">Environment variable 'BASE_URL' set to value 'na'.</msg>
+<arg>BASE_URL</arg>
+<arg>${Load Prop}[BASE_URL]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.237144" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-14T00:33:15.237677" level="INFO">Execution Platform is IOS</msg>
+<arg>Execution Platform is ${Load Prop}[OS_ExecutionPlatform]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.237144" elapsed="0.000533"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${Load Prop}[OS_ExecutionPlatform]&quot; == &quot;Android&quot;">
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<arg>DEVICE_NAME</arg>
+<arg>${Load Prop}[AndroidDeviceName]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:15.237677" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<arg>APP_PATH</arg>
+<arg>${Load Prop}[App_Path_Android]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:15.237677" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:15.237677" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.238206" level="INFO">Environment variable 'DEVICE_NAME' set to value 'iPhone 15 Pro'.</msg>
+<arg>DEVICE_NAME</arg>
+<arg>${Load Prop}[iOSDeviceName]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.238206" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:15.238206" level="INFO">Environment variable 'APP_PATH' set to value 'bs://2252459fbfdeb65d27a17e8b5a0761a3180cc5fc'.</msg>
+<arg>APP_PATH</arg>
+<arg>${Load Prop}[App_Path_iOS]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.238206" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:15.238206" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:15.237677" elapsed="0.001046"/>
+</if>
+<return>
+<value>&amp;{Load Prop}</value>
+<status status="PASS" start="2026-03-14T00:33:15.238723" elapsed="0.000000"/>
+</return>
+<msg time="2026-03-14T00:33:15.238723" level="INFO">&amp;{prop} = { ConnectionURL=http://sundarnatarajan_iqyk45:wtYGx3ewdxiUVMBvSFX8@hub-cloud.browserstack.com/wd/hub | App_Environment=QA | TestType=smoke | App_Version=Android - Version 3.95.019 (92) &amp; iOS - 3.95.02...</msg>
+<var>&amp;{prop}</var>
+<doc>Keyword wrapper to load the properties file</doc>
+<status status="PASS" start="2026-03-14T00:33:15.229588" elapsed="0.009135"/>
+</kw>
+<kw name="Load Test Data From File" owner="DataUtility">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>"Inside Load Testdata from file"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.239765" elapsed="0.000523"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2026-03-14T00:33:15.240288" level="INFO">${doc_id} = 8532</msg>
+<var>${doc_id}</var>
+<arg>4</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.240288" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2026-03-14T00:33:15.241065" level="INFO">${TEST_TYPE} = smoke</msg>
+<var>${TEST_TYPE}</var>
+<arg>%{TEST_TYPE}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.241065" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${TESTDATA FILE PATH}\\${TEST_TYPE}\\${FileName}</arg>
+<arg>${doc_id}</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2026-03-14T00:33:15.241065" elapsed="4.396986"/>
+</kw>
+<kw name="Read Excel Row" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.638572" level="INFO">@{FIRST ROW COLUMN VALUE} = [ Execute | UniqueID | TestcaseID | TestcaseName | UserName ]</msg>
+<var>@{FIRST ROW COLUMN VALUE}</var>
+<arg>row_num=1</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a row from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.638572" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>"Inside Load Testdata from file... 1"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.639093" elapsed="0.000000"/>
+</kw>
+<for flavor="IN ENUMERATE" start="1">
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == 'UniqueID'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${colmn_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.640203" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.640203" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.639666" elapsed="0.000537"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.639666" elapsed="0.000537"/>
+</if>
+<var name="${index}">1</var>
+<var name="${item}">Execute</var>
+<status status="PASS" start="2026-03-14T00:33:19.639666" elapsed="0.000537"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == 'UniqueID'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.640902" level="INFO">${colmn_num} = 2</msg>
+<var>${colmn_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.640902" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.641448" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.641448" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.640902" elapsed="0.000546"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.640902" elapsed="0.000546"/>
+</if>
+<var name="${index}">2</var>
+<var name="${item}">UniqueID</var>
+<status status="PASS" start="2026-03-14T00:33:19.640902" elapsed="0.000546"/>
+</iter>
+<var>${index}</var>
+<var>${item}</var>
+<value>@{FIRST ROW COLUMN VALUE}</value>
+<status status="PASS" start="2026-03-14T00:33:19.639666" elapsed="0.001782"/>
+</for>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>${colmn_num} in globals()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.641448" elapsed="0.000000"/>
+</kw>
+<msg time="2026-03-14T00:33:19.642332" level="INFO">${Column_name_exist} = True</msg>
+<var>${Column_name_exist}</var>
+<arg>Evaluate</arg>
+<arg>${colmn_num} in globals()</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.641448" elapsed="0.000884"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${Column_name_exist}">
+<kw name="Fail" owner="BuiltIn">
+<arg>Given first row column header name 'TestcaseID' not exists in the following xls/xlsx file '${File Name}'</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.642332" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.642332" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.642332" elapsed="0.000000"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>"Inside Load Testdata from file... 2"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.642332" elapsed="0.000558"/>
+</kw>
+<kw name="Read Excel Column" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.643418" level="INFO">@{COLUMN VALUE} = [ UniqueID | ServiceDashboard0001 ]</msg>
+<var>@{COLUMN VALUE}</var>
+<arg>col_num=${colmn_num}</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.642890" elapsed="0.000528"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.643418" level="INFO">Length is 2.</msg>
+<msg time="2026-03-14T00:33:19.643947" level="INFO">${ROW COUNT} = 2</msg>
+<var>${ROW COUNT}</var>
+<arg>${COLUMN VALUE}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.643418" elapsed="0.000529"/>
+</kw>
+<kw name="Get Index From List" owner="Collections">
+<msg time="2026-03-14T00:33:19.643947" level="INFO">${TESTDATA ROW NUMBER} = -1</msg>
+<var>${TESTDATA ROW NUMBER}</var>
+<arg>${COLUMN VALUE}</arg>
+<arg>${Row Name}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.643947" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.644480" level="INFO">${TESTDATA ROW NUMBER} = 0</msg>
+<var>${TESTDATA ROW NUMBER}</var>
+<arg>int(${TESTDATA ROW NUMBER}) + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.643947" elapsed="0.000533"/>
+</kw>
+<kw name="Read Excel Row" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.645010" level="INFO">@{SELECTED ROW VALUE} = [ Execute | UniqueID | TestcaseID | TestcaseName | UserName ]</msg>
+<var>@{SELECTED ROW VALUE}</var>
+<arg>row_num=${TESTDATA ROW NUMBER}</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a row from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.644480" elapsed="0.000530"/>
+</kw>
+<kw name="Read Excel Row" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.645575" level="INFO">@{HEADER ROW VALUE} = [ Execute | UniqueID | TestcaseID | TestcaseName | UserName ]</msg>
+<var>@{HEADER ROW VALUE}</var>
+<arg>row_num=1</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a row from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.645010" elapsed="0.000565"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>"Inside Load Testdata from file... 3"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.645575" elapsed="0.000496"/>
+</kw>
+<kw name="Convert Two List Into Dictionary" owner="DataUtility">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.646616" level="INFO">&amp;{Dict Data} = { }</msg>
+<var>&amp;{Dict Data}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.646616" elapsed="0.000000"/>
+</kw>
+<for flavor="IN ZIP">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.647674" level="FAIL">'Execute' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.647145" elapsed="0.000529">'Execute' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.647674" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.647145" elapsed="0.000529"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.648205" level="FAIL">'Execute' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.648205" elapsed="0.000000">'Execute' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.648734" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.647674" elapsed="0.001060"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.648734" level="INFO">${value} = Execute</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.648734" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.648734" elapsed="0.000531"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.648734" elapsed="0.000531"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.649265" level="INFO">${value} = Execute</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.649265" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.649794" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.649265" elapsed="0.000529"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.649265" elapsed="0.000529"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.649794" elapsed="0.000000"/>
+</kw>
+<var name="${key}">Execute</var>
+<var name="${value}">Execute</var>
+<status status="PASS" start="2026-03-14T00:33:19.647145" elapsed="0.002649"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.650339" level="FAIL">'UniqueID' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.650339" elapsed="0.000000">'UniqueID' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.650339" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.650339" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.650875" level="FAIL">'UniqueID' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.650875" elapsed="0.000000">'UniqueID' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.650875" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.650875" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.651430" level="INFO">${value} = UniqueID</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.651430" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.650875" elapsed="0.000555"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.650875" elapsed="0.000555"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.651430" level="INFO">${value} = UniqueID</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.651430" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.652099" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.652099" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.652099" elapsed="0.000000"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.652099" elapsed="0.000000"/>
+</kw>
+<var name="${key}">UniqueID</var>
+<var name="${value}">UniqueID</var>
+<status status="PASS" start="2026-03-14T00:33:19.650339" elapsed="0.001760"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.653021" level="FAIL">'TestcaseID' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.652099" elapsed="0.000922">'TestcaseID' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.653021" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.652099" elapsed="0.000922"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.653562" level="FAIL">'TestcaseID' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.653021" elapsed="0.000541">'TestcaseID' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.653562" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.653021" elapsed="0.000541"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.654078" level="INFO">${value} = TestcaseID</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.653562" elapsed="0.000516"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.653562" elapsed="0.000516"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.653562" elapsed="0.000516"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.654078" level="INFO">${value} = TestcaseID</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.654078" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.654609" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.654078" elapsed="0.000531"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.654078" elapsed="0.000531"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.654609" elapsed="0.000000"/>
+</kw>
+<var name="${key}">TestcaseID</var>
+<var name="${value}">TestcaseID</var>
+<status status="PASS" start="2026-03-14T00:33:19.652099" elapsed="0.002510"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.655496" level="FAIL">'TestcaseName' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.654609" elapsed="0.000887">'TestcaseName' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.655496" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.654609" elapsed="0.000887"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.656049" level="FAIL">'TestcaseName' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.655496" elapsed="0.000553">'TestcaseName' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.656049" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.655496" elapsed="0.000553"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.656574" level="INFO">${value} = TestcaseName</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.656049" elapsed="0.000525"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.656049" elapsed="0.000525"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.656049" elapsed="0.000525"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.656574" level="INFO">${value} = TestcaseName</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.656574" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.656574" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.656574" elapsed="0.000528"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.656574" elapsed="0.000528"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.657102" elapsed="0.000000"/>
+</kw>
+<var name="${key}">TestcaseName</var>
+<var name="${value}">TestcaseName</var>
+<status status="PASS" start="2026-03-14T00:33:19.654609" elapsed="0.002493"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.657634" level="FAIL">'UserName' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.657634" elapsed="0.000000">'UserName' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.657634" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.657634" elapsed="0.000533"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.658167" level="FAIL">'UserName' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.658167" elapsed="0.000000">'UserName' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.658167" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.658167" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.658693" level="INFO">${value} = UserName</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.658693" elapsed="0.000520"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.658693" elapsed="0.000520"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.658167" elapsed="0.001046"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.659213" level="INFO">${value} = UserName</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.659213" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.659739" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.659213" elapsed="0.000526"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.659213" elapsed="0.000526"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.660282" elapsed="0.000000"/>
+</kw>
+<var name="${key}">UserName</var>
+<var name="${value}">UserName</var>
+<status status="PASS" start="2026-03-14T00:33:19.657634" elapsed="0.002648"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>${LIST1}</value>
+<value>${LIST2}</value>
+<status status="PASS" start="2026-03-14T00:33:19.646616" elapsed="0.013666"/>
+</for>
+<return>
+<value>&amp;{Dict Data}</value>
+<status status="PASS" start="2026-03-14T00:33:19.660282" elapsed="0.000000"/>
+</return>
+<msg time="2026-03-14T00:33:19.660916" level="INFO">&amp;{TEST DATA DICT} = { Execute=Execute | UniqueID=UniqueID | TestcaseID=TestcaseID | TestcaseName=TestcaseName | UserName=UserName }</msg>
+<var>&amp;{TEST DATA DICT}</var>
+<arg>${HEADER ROW VALUE}</arg>
+<arg>${SELECTED ROW VALUE}</arg>
+<doc>keyword wrapper to convert the two list into dictionary</doc>
+<status status="PASS" start="2026-03-14T00:33:19.646071" elapsed="0.014845"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.661962" level="INFO">Environment variable 'EXECUTE_TEST' set to value 'Execute'.</msg>
+<arg>EXECUTE_TEST</arg>
+<arg>${TEST DATA DICT.Execute}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.660916" elapsed="0.001046"/>
+</kw>
+<kw name="Close Current Excel Document" owner="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.663019" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${TEST DATA DICT.UserName}' != 'None'">
+<if>
+<branch type="IF" condition="${USER_DATA} == {}">
+<kw name="Load Login Credential From User Credential File" owner="DataUtility">
+<kw name="Generate Random String" owner="String">
+<msg time="2026-03-14T00:33:19.664606" level="INFO">${doc_id} = 3376</msg>
+<var>${doc_id}</var>
+<arg>4</arg>
+<arg>0123456789abc</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.664071" elapsed="0.000535"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${USER CREDENTIAL FILE PATH}</arg>
+<arg>${doc_id}</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.664606" elapsed="0.010080"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.675213" level="INFO">${PASSWORD_KEY} = []</msg>
+<var>${PASSWORD_KEY}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.674686" elapsed="0.000527"/>
+</kw>
+<kw name="Read Excel Column" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.675737" level="INFO">@{FIRST COLUMN VALUE} = [ UserName | serviceWA_User1 ]</msg>
+<var>@{FIRST COLUMN VALUE}</var>
+<arg>col_num=1</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.675213" elapsed="0.000524"/>
+</kw>
+<kw name="Read Excel Row" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.675737" level="INFO">@{HEADER ROW VALUE} = [ UserName | Batch1 | Batch2 | Batch3 | Batch4 | Batch5 | Batch1_Password | Batch2_Password | Batch3_Password | Batch4_Password | Batch5_Password ]</msg>
+<var>@{HEADER ROW VALUE}</var>
+<arg>row_num=1</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a row from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.675737" elapsed="0.000641"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.676378" level="INFO">Length is 11.</msg>
+<msg time="2026-03-14T00:33:19.676378" level="INFO">${COLUMN COUNT} = 11</msg>
+<var>${COLUMN COUNT}</var>
+<arg>${HEADER ROW VALUE}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.676378" elapsed="0.000000"/>
+</kw>
+<kw name="Remove Given Index From List" owner="CollectionUtilities">
+<msg time="2026-03-14T00:33:19.676378" level="INFO">@{USER_NAME_KEY} = [ serviceWA_User1 ]</msg>
+<var>@{USER_NAME_KEY}</var>
+<arg>${FIRST COLUMN VALUE}</arg>
+<arg>0</arg>
+<status status="PASS" start="2026-03-14T00:33:19.676378" elapsed="0.000000"/>
+</kw>
+<for flavor="IN ENUMERATE" start="1">
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == '${COLUMN_NAME}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${col_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.677054" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.677625" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.677054" elapsed="0.000571"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.677054" elapsed="0.000571"/>
+</if>
+<var name="${index}">1</var>
+<var name="${item}">UserName</var>
+<status status="PASS" start="2026-03-14T00:33:19.677054" elapsed="0.000571"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == '${COLUMN_NAME}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.677625" level="INFO">${col_num} = 2</msg>
+<var>${col_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.677625" elapsed="0.000689"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.678314" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.678314" elapsed="0.000552"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.677625" elapsed="0.001241"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.677625" elapsed="0.001241"/>
+</if>
+<var name="${index}">2</var>
+<var name="${item}">Batch1</var>
+<status status="PASS" start="2026-03-14T00:33:19.677625" elapsed="0.001784"/>
+</iter>
+<var>${index}</var>
+<var>${item}</var>
+<value>@{HEADER ROW VALUE}</value>
+<status status="PASS" start="2026-03-14T00:33:19.676378" elapsed="0.003031"/>
+</for>
+<for flavor="IN ENUMERATE" start="1">
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == '${COLUMN_NAME}_Password'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${pass_col_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.679952" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.679952" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.679409" elapsed="0.000543"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.679409" elapsed="0.000543"/>
+</if>
+<var name="${index}">1</var>
+<var name="${item}">UserName</var>
+<status status="PASS" start="2026-03-14T00:33:19.679409" elapsed="0.000543"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == '${COLUMN_NAME}_Password'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${pass_col_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.679952" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.679952" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.679952" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.679952" elapsed="0.000000"/>
+</if>
+<var name="${index}">2</var>
+<var name="${item}">Batch1</var>
+<status status="PASS" start="2026-03-14T00:33:19.679952" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == '${COLUMN_NAME}_Password'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${pass_col_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.680851" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.680851" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.680851" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.679952" elapsed="0.000899"/>
+</if>
+<var name="${index}">3</var>
+<var name="${item}">Batch2</var>
+<status status="PASS" start="2026-03-14T00:33:19.679952" elapsed="0.000899"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == '${COLUMN_NAME}_Password'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${pass_col_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.681377" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.681377" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.680851" elapsed="0.000526"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.680851" elapsed="0.000526"/>
+</if>
+<var name="${index}">4</var>
+<var name="${item}">Batch3</var>
+<status status="PASS" start="2026-03-14T00:33:19.680851" elapsed="0.000526"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == '${COLUMN_NAME}_Password'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${pass_col_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.681921" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.681921" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.681377" elapsed="0.000544"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.681377" elapsed="0.000544"/>
+</if>
+<var name="${index}">5</var>
+<var name="${item}">Batch4</var>
+<status status="PASS" start="2026-03-14T00:33:19.681377" elapsed="0.000544"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == '${COLUMN_NAME}_Password'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${pass_col_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.681921" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.682497" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.681921" elapsed="0.000576"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.681921" elapsed="0.000576"/>
+</if>
+<var name="${index}">6</var>
+<var name="${item}">Batch5</var>
+<status status="PASS" start="2026-03-14T00:33:19.681921" elapsed="0.000576"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="'${item}' == '${COLUMN_NAME}_Password'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.683025" level="INFO">${pass_col_num} = 7</msg>
+<var>${pass_col_num}</var>
+<arg>${index}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.682497" elapsed="0.000528"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.683025" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.683025" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.682497" elapsed="0.000528"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.682497" elapsed="0.000528"/>
+</if>
+<var name="${index}">7</var>
+<var name="${item}">Batch1_Password</var>
+<status status="PASS" start="2026-03-14T00:33:19.682497" elapsed="0.000528"/>
+</iter>
+<var>${index}</var>
+<var>${item}</var>
+<value>@{HEADER ROW VALUE}</value>
+<status status="PASS" start="2026-03-14T00:33:19.679409" elapsed="0.003616"/>
+</for>
+<kw name="Read Excel Column" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.683555" level="INFO">@{EMAIL_ID} = [ Batch1 | serviceWAUser1@servicewa.com ]</msg>
+<var>@{EMAIL_ID}</var>
+<arg>col_num=${col_num}</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.683025" elapsed="0.000530"/>
+</kw>
+<kw name="Remove Given Index From List" owner="CollectionUtilities">
+<msg time="2026-03-14T00:33:19.684084" level="INFO">@{EMAIL_ID} = [ serviceWAUser1@servicewa.com ]</msg>
+<var>@{EMAIL_ID}</var>
+<arg>${EMAIL_ID}</arg>
+<arg>0</arg>
+<status status="PASS" start="2026-03-14T00:33:19.683555" elapsed="0.000529"/>
+</kw>
+<kw name="Read Excel Column" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.684084" level="INFO">@{PASSWORD} = [ Batch1_Password | Test123 ]</msg>
+<var>@{PASSWORD}</var>
+<arg>col_num=${pass_col_num}</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.684084" elapsed="0.000000"/>
+</kw>
+<kw name="Remove Given Index From List" owner="CollectionUtilities">
+<msg time="2026-03-14T00:33:19.684614" level="INFO">@{PASSWORD} = [ Test123 ]</msg>
+<var>@{PASSWORD}</var>
+<arg>${PASSWORD}</arg>
+<arg>0</arg>
+<status status="PASS" start="2026-03-14T00:33:19.684614" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${PASSWORD_KEY}</arg>
+<arg>${item}_Password</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.684614" elapsed="0.000000"/>
+</kw>
+<var name="${item}">serviceWA_User1</var>
+<status status="PASS" start="2026-03-14T00:33:19.684614" elapsed="0.000530"/>
+</iter>
+<var>${item}</var>
+<value>@{USER_NAME_KEY}</value>
+<status status="PASS" start="2026-03-14T00:33:19.684614" elapsed="0.000530"/>
+</for>
+<kw name="Convert Two List Into Dictionary" owner="DataUtility">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.685676" level="INFO">&amp;{Dict Data} = { }</msg>
+<var>&amp;{Dict Data}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.685676" elapsed="0.000000"/>
+</kw>
+<for flavor="IN ZIP">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.686205" level="FAIL">'serviceWAUser1@servicewa.com' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.686205" elapsed="0.000000">'serviceWAUser1@servicewa.com' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.686205" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.686205" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.686741" level="FAIL">'serviceWAUser1@servicewa.com' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.686741" elapsed="0.000529">'serviceWAUser1@servicewa.com' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.687270" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.686741" elapsed="0.000529"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.687813" level="INFO">${value} = serviceWAUser1@servicewa.com</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.687270" elapsed="0.000543"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.687270" elapsed="0.000543"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.687270" elapsed="0.000543"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.687813" level="INFO">${value} = serviceWAUser1@servicewa.com</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.687813" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.688343" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.687813" elapsed="0.000530"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.687813" elapsed="0.000530"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.688343" elapsed="0.000000"/>
+</kw>
+<var name="${key}">serviceWA_User1</var>
+<var name="${value}">serviceWAUser1@servicewa.com</var>
+<status status="PASS" start="2026-03-14T00:33:19.685676" elapsed="0.002667"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>${LIST1}</value>
+<value>${LIST2}</value>
+<status status="PASS" start="2026-03-14T00:33:19.685676" elapsed="0.002667"/>
+</for>
+<return>
+<value>&amp;{Dict Data}</value>
+<status status="PASS" start="2026-03-14T00:33:19.688343" elapsed="0.000000"/>
+</return>
+<msg time="2026-03-14T00:33:19.688881" level="INFO">&amp;{USER_DICT} = { serviceWA_User1=serviceWAUser1@servicewa.com }</msg>
+<var>&amp;{USER_DICT}</var>
+<arg>${USER_NAME_KEY}</arg>
+<arg>${EMAIL_ID}</arg>
+<doc>keyword wrapper to convert the two list into dictionary</doc>
+<status status="PASS" start="2026-03-14T00:33:19.685144" elapsed="0.003737"/>
+</kw>
+<kw name="Convert Two List Into Dictionary" owner="DataUtility">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.689431" level="INFO">&amp;{Dict Data} = { }</msg>
+<var>&amp;{Dict Data}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.689431" elapsed="0.000000"/>
+</kw>
+<for flavor="IN ZIP">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.689987" level="FAIL">'Test123' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.689987" elapsed="0.000000">'Test123' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.689987" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.689431" elapsed="0.000556"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.690521" level="FAIL">'Test123' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.690521" elapsed="0.000000">'Test123' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.690521" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.689987" elapsed="0.000534"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.691572" level="INFO">${value} = Test123</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.691050" elapsed="0.000522"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.691050" elapsed="0.000522"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.691050" elapsed="0.000522"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.691572" level="INFO">${value} = Test123</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.691572" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.692106" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.692106" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.692106" elapsed="0.000000"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.692106" elapsed="0.000000"/>
+</kw>
+<var name="${key}">serviceWA_User1_Password</var>
+<var name="${value}">Test123</var>
+<status status="PASS" start="2026-03-14T00:33:19.689431" elapsed="0.002675"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>${LIST1}</value>
+<value>${LIST2}</value>
+<status status="PASS" start="2026-03-14T00:33:19.689431" elapsed="0.003207"/>
+</for>
+<return>
+<value>&amp;{Dict Data}</value>
+<status status="PASS" start="2026-03-14T00:33:19.692638" elapsed="0.000000"/>
+</return>
+<msg time="2026-03-14T00:33:19.692638" level="INFO">&amp;{PASSWORD_DICT} = { serviceWA_User1_Password=Test123 }</msg>
+<var>&amp;{PASSWORD_DICT}</var>
+<arg>${PASSWORD_KEY}</arg>
+<arg>${PASSWORD}</arg>
+<doc>keyword wrapper to convert the two list into dictionary</doc>
+<status status="PASS" start="2026-03-14T00:33:19.688881" elapsed="0.003757"/>
+</kw>
+<kw name="Combine Two Dictionary" owner="CollectionUtilities">
+<msg time="2026-03-14T00:33:19.693167" level="INFO">&amp;{USER_CREDENTIAL_DICT} = { serviceWA_User1=serviceWAUser1@servicewa.com | serviceWA_User1_Password=Test123 }</msg>
+<var>&amp;{USER_CREDENTIAL_DICT}</var>
+<arg>${USER_DICT}</arg>
+<arg>${PASSWORD_DICT}</arg>
+<status status="PASS" start="2026-03-14T00:33:19.692638" elapsed="0.000529"/>
+</kw>
+<kw name="Close Current Excel Document" owner="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.693167" elapsed="0.000000"/>
+</kw>
+<return>
+<value>&amp;{USER_CREDENTIAL_DICT}</value>
+<status status="PASS" start="2026-03-14T00:33:19.693167" elapsed="0.000000"/>
+</return>
+<msg time="2026-03-14T00:33:19.693167" level="INFO">${USER_DATA} = {'serviceWA_User1': 'serviceWAUser1@servicewa.com', 'serviceWA_User1_Password': 'Test123'}</msg>
+<var>${USER_DATA}</var>
+<doc>Load Test Data From an Excel(.xls) File</doc>
+<status status="PASS" start="2026-03-14T00:33:19.664071" elapsed="0.029096"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.693718" level="INFO">${USER_DATA} = {'serviceWA_User1': 'serviceWAUser1@servicewa.com', 'serviceWA_User1_Password': 'Test123'}</msg>
+<arg>${USER_DATA}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.693718" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.663544" elapsed="0.030174"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.663544" elapsed="0.030174"/>
+</if>
+<kw name="Convert Given String To List Based On Delimiter" owner="DataUtility">
+<kw name="Split String" owner="String">
+<msg time="2026-03-14T00:33:19.695164" level="INFO">@{DATA LIST} = [ UserName ]</msg>
+<var>@{DATA LIST}</var>
+<arg>${STRING}</arg>
+<arg>${SEPARATOR}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.694614" elapsed="0.000550"/>
+</kw>
+<if>
+<branch type="IF" condition="${STRIP}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.695164" level="INFO">@{DATA LIST} = [ UserName ]</msg>
+<var>@{DATA LIST}</var>
+<arg>[value.strip() for value in ${DATA LIST}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.695164" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.695164" elapsed="0.000522"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.695164" elapsed="0.000522"/>
+</if>
+<return>
+<value>@{DATA LIST}</value>
+<status status="PASS" start="2026-03-14T00:33:19.695686" elapsed="0.000000"/>
+</return>
+<msg time="2026-03-14T00:33:19.695686" level="INFO">@{USER_LIST} = [ UserName ]</msg>
+<var>@{USER_LIST}</var>
+<arg>${TEST DATA DICT.UserName}</arg>
+<arg>&amp;</arg>
+<doc>keyword wrapper to convert string to list based on delimiter</doc>
+<status status="PASS" start="2026-03-14T00:33:19.693718" elapsed="0.001968"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.696238" level="INFO">@{PASS_LIST} = [ UserName_Password ]</msg>
+<var>@{PASS_LIST}</var>
+<arg>[ list_item+"_Password" for list_item in ${USER_LIST}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.695686" elapsed="0.000552"/>
+</kw>
+<kw name="Combine Lists" owner="Collections">
+<msg time="2026-03-14T00:33:19.696238" level="INFO">@{USER_LIST} = [ UserName | UserName_Password ]</msg>
+<var>@{USER_LIST}</var>
+<arg>${USER_LIST}</arg>
+<arg>${PASS_LIST}</arg>
+<doc>Combines the given ``lists`` together and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.696238" elapsed="0.000000"/>
+</kw>
+<kw name="Create New Dict For Given Values" owner="CollectionUtilities">
+<msg time="2026-03-14T00:33:19.696766" level="INFO">&amp;{USER_DICT} = { }</msg>
+<var>&amp;{USER_DICT}</var>
+<arg>${USER_DATA}</arg>
+<arg>${USER_LIST}</arg>
+<status status="PASS" start="2026-03-14T00:33:19.696238" elapsed="0.000528"/>
+</kw>
+<kw name="Combine Two Dictionary" owner="CollectionUtilities">
+<msg time="2026-03-14T00:33:19.697295" level="INFO">&amp;{TEST DATA DICT} = { Execute=Execute | UniqueID=UniqueID | TestcaseID=TestcaseID | TestcaseName=TestcaseName | UserName=UserName }</msg>
+<var>&amp;{TEST DATA DICT}</var>
+<arg>${TEST DATA DICT}</arg>
+<arg>${USER_DICT}</arg>
+<status status="PASS" start="2026-03-14T00:33:19.696766" elapsed="0.000529"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.698107" level="INFO">Environment variable 'USER_LOGIN' set to value 'UserName'.</msg>
+<arg>USER_LOGIN</arg>
+<arg>${TEST DATA DICT.UserName}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.697295" elapsed="0.000812"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.663019" elapsed="0.035088"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<arg>USER_LOGIN</arg>
+<arg>${TEST DATA DICT.UserName}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.698107" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.698107" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.663019" elapsed="0.035088"/>
+</if>
+<kw name="Get Creditcard And Shipping Address Details From Test Data file" owner="DataUtility">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.698771" level="FAIL">'{'Execute': 'Execute', 'UniqueID': 'UniqueID', 'TestcaseID': 'TestcaseID', 'TestcaseName': 'TestcaseName', 'UserName': 'UserName'}' does not contain 'Correct_Card_And_Address'</msg>
+<arg>${TEST DATA DICT}</arg>
+<arg>Correct_Card_And_Address</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.698771" elapsed="0.000687">'{'Execute': 'Execute', 'UniqueID': 'UniqueID', 'TestcaseID': 'TestcaseID', 'TestcaseName': 'TestcaseName', 'UserName': 'UserName'}' does not contain 'Correct_Card_And_Address'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.699458" level="INFO">${CORRECT_CC_DETAILS} = False</msg>
+<var>${CORRECT_CC_DETAILS}</var>
+<arg>Should Contain</arg>
+<arg>${TEST DATA DICT}</arg>
+<arg>Correct_Card_And_Address</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.698771" elapsed="0.000687"/>
+</kw>
+<if>
+<branch type="IF" condition="${CORRECT_CC_DETAILS}">
+<if>
+<branch type="IF" condition="'${TEST DATA DICT.Correct_Card_And_Address}' != 'None'">
+<kw name="Load Test Data For The Given Row" owner="DataUtility">
+<var>&amp;{TestData}</var>
+<arg>CreditCard_Details.xlsx</arg>
+<arg>creditcard</arg>
+<arg>${TEST DATA DICT.Correct_Card_And_Address}</arg>
+<doc>Load Test Data From an Excel(.xls) File</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.699458" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{CARD_DETAILS}</var>
+<arg>${TEST DATA DICT.Correct_Card_And_Address}</arg>
+<arg>${TestData}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.699458" elapsed="0.000000"/>
+</kw>
+<kw name="Combine Two Dictionary" owner="CollectionUtilities">
+<var>&amp;{TEST DATA DICT}</var>
+<arg>${TEST DATA DICT}</arg>
+<arg>${CARD_DETAILS}</arg>
+<status status="NOT RUN" start="2026-03-14T00:33:19.699458" elapsed="0.000697"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.699458" elapsed="0.000697"/>
+</branch>
+<status status="NOT RUN" start="2026-03-14T00:33:19.699458" elapsed="0.000697"/>
+</if>
+<status status="NOT RUN" start="2026-03-14T00:33:19.699458" elapsed="0.000697"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.699458" elapsed="0.000697"/>
+</if>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.700155" level="FAIL">'{'Execute': 'Execute', 'UniqueID': 'UniqueID', 'TestcaseID': 'TestcaseID', 'TestcaseName': 'TestcaseName', 'UserName': 'UserName'}' does not contain 'Wrong_CreditCard_And_Correct_Address'</msg>
+<arg>${TEST DATA DICT}</arg>
+<arg>Wrong_CreditCard_And_Correct_Address</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.700155" elapsed="0.000000">'{'Execute': 'Execute', 'UniqueID': 'UniqueID', 'TestcaseID': 'TestcaseID', 'TestcaseName': 'TestcaseName', 'UserName': 'UserName'}' does not contain 'Wrong_CreditCard_And_Correct_Address'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.700155" level="INFO">${WRONG_CC_DETAILS_STATUS} = False</msg>
+<var>${WRONG_CC_DETAILS_STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${TEST DATA DICT}</arg>
+<arg>Wrong_CreditCard_And_Correct_Address</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.700155" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${WRONG_CC_DETAILS_STATUS}">
+<if>
+<branch type="IF" condition="'${TEST DATA DICT.Wrong_CreditCard_And_Correct_Address}' != 'None'">
+<kw name="Load Test Data For The Given Row" owner="DataUtility">
+<var>&amp;{TestData}</var>
+<arg>CreditCard_Details.xlsx</arg>
+<arg>creditcard</arg>
+<arg>${TEST DATA DICT.Wrong_CreditCard_And_Correct_Address}</arg>
+<doc>Load Test Data From an Excel(.xls) File</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.700804" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{CARD_DETAILS}</var>
+<arg>${TEST DATA DICT.Wrong_CreditCard_And_Correct_Address}</arg>
+<arg>${TestData}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.700804" elapsed="0.000000"/>
+</kw>
+<kw name="Combine Two Dictionary" owner="CollectionUtilities">
+<var>&amp;{TEST DATA DICT}</var>
+<arg>${TEST DATA DICT}</arg>
+<arg>${CARD_DETAILS}</arg>
+<status status="NOT RUN" start="2026-03-14T00:33:19.700804" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.700804" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2026-03-14T00:33:19.700804" elapsed="0.000000"/>
+</if>
+<status status="NOT RUN" start="2026-03-14T00:33:19.700804" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.700155" elapsed="0.000649"/>
+</if>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.701623" level="FAIL">'{'Execute': 'Execute', 'UniqueID': 'UniqueID', 'TestcaseID': 'TestcaseID', 'TestcaseName': 'TestcaseName', 'UserName': 'UserName'}' does not contain 'Correct_Card_And_Wrong_Address'</msg>
+<arg>${TEST DATA DICT}</arg>
+<arg>Correct_Card_And_Wrong_Address</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.701623" elapsed="0.000000">'{'Execute': 'Execute', 'UniqueID': 'UniqueID', 'TestcaseID': 'TestcaseID', 'TestcaseName': 'TestcaseName', 'UserName': 'UserName'}' does not contain 'Correct_Card_And_Wrong_Address'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.701623" level="INFO">${WRONG_ADDRESS_DETAILS_STATUS} = False</msg>
+<var>${WRONG_ADDRESS_DETAILS_STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${TEST DATA DICT}</arg>
+<arg>Correct_Card_And_Wrong_Address</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.700804" elapsed="0.000819"/>
+</kw>
+<if>
+<branch type="IF" condition="${WRONG_ADDRESS_DETAILS_STATUS}">
+<if>
+<branch type="IF" condition="'${TEST DATA DICT.Correct_Card_And_Wrong_Address}' != 'None'">
+<kw name="Load Test Data For The Given Row" owner="DataUtility">
+<var>&amp;{TestData}</var>
+<arg>CreditCard_Details.xlsx</arg>
+<arg>creditcard</arg>
+<arg>${TEST DATA DICT.Correct_Card_And_Wrong_Address}</arg>
+<doc>Load Test Data From an Excel(.xls) File</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.701623" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{CARD_DETAILS}</var>
+<arg>${TEST DATA DICT.Correct_Card_And_Wrong_Address}</arg>
+<arg>${TestData}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.701623" elapsed="0.000000"/>
+</kw>
+<kw name="Combine Two Dictionary" owner="CollectionUtilities">
+<var>&amp;{TEST DATA DICT}</var>
+<arg>${TEST DATA DICT}</arg>
+<arg>${CARD_DETAILS}</arg>
+<status status="NOT RUN" start="2026-03-14T00:33:19.702391" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.701623" elapsed="0.000768"/>
+</branch>
+<status status="NOT RUN" start="2026-03-14T00:33:19.701623" elapsed="0.000768"/>
+</if>
+<status status="NOT RUN" start="2026-03-14T00:33:19.701623" elapsed="0.000768"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.701623" elapsed="0.000768"/>
+</if>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.702391" level="FAIL">'{'Execute': 'Execute', 'UniqueID': 'UniqueID', 'TestcaseID': 'TestcaseID', 'TestcaseName': 'TestcaseName', 'UserName': 'UserName'}' does not contain 'ShippingAddress'</msg>
+<arg>${TEST DATA DICT}</arg>
+<arg>ShippingAddress</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.702391" elapsed="0.000538">'{'Execute': 'Execute', 'UniqueID': 'UniqueID', 'TestcaseID': 'TestcaseID', 'TestcaseName': 'TestcaseName', 'UserName': 'UserName'}' does not contain 'ShippingAddress'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.702929" level="INFO">${SHIP_ADDRESS_DETAILS_STATUS} = False</msg>
+<var>${SHIP_ADDRESS_DETAILS_STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${TEST DATA DICT}</arg>
+<arg>ShippingAddress</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.702391" elapsed="0.000538"/>
+</kw>
+<if>
+<branch type="IF" condition="${SHIP_ADDRESS_DETAILS_STATUS}">
+<if>
+<branch type="IF" condition="'${TEST DATA DICT.ShippingAddress}' != 'None'">
+<kw name="Load Test Data For The Given Row" owner="DataUtility">
+<var>&amp;{TestData}</var>
+<arg>ShippingAddress.xlsx</arg>
+<arg>Shipping_Address</arg>
+<arg>${TEST DATA DICT.ShippingAddress}</arg>
+<doc>Load Test Data From an Excel(.xls) File</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.703482" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{SHIP_ADDRESS}</var>
+<arg>${TEST DATA DICT.ShippingAddress}</arg>
+<arg>${TestData}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.703482" elapsed="0.000000"/>
+</kw>
+<kw name="Combine Two Dictionary" owner="CollectionUtilities">
+<var>&amp;{TEST DATA DICT}</var>
+<arg>${TEST DATA DICT}</arg>
+<arg>${SHIP_ADDRESS}</arg>
+<status status="NOT RUN" start="2026-03-14T00:33:19.703482" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.702929" elapsed="0.000553"/>
+</branch>
+<status status="NOT RUN" start="2026-03-14T00:33:19.702929" elapsed="0.000553"/>
+</if>
+<status status="NOT RUN" start="2026-03-14T00:33:19.702929" elapsed="0.000553"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.702929" elapsed="0.000553"/>
+</if>
+<return>
+<value>&amp;{TEST DATA DICT}</value>
+<status status="PASS" start="2026-03-14T00:33:19.703482" elapsed="0.000532"/>
+</return>
+<msg time="2026-03-14T00:33:19.704014" level="INFO">&amp;{TEST DATA DICT} = { Execute=Execute | UniqueID=UniqueID | TestcaseID=TestcaseID | TestcaseName=TestcaseName | UserName=UserName }</msg>
+<var>&amp;{TEST DATA DICT}</var>
+<arg>${TEST DATA DICT}</arg>
+<doc>Get Creditcard And Shipping Address Detail</doc>
+<status status="PASS" start="2026-03-14T00:33:19.698771" elapsed="0.005243"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>"Inside Load Testdata from file... 4"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.704014" elapsed="0.000540"/>
+</kw>
+<return>
+<value>&amp;{TEST DATA DICT}</value>
+<status status="PASS" start="2026-03-14T00:33:19.704554" elapsed="0.000000"/>
+</return>
+<msg time="2026-03-14T00:33:19.704554" level="INFO">&amp;{TestData} = { Execute=Execute | UniqueID=UniqueID | TestcaseID=TestcaseID | TestcaseName=TestcaseName | UserName=UserName }</msg>
+<var>&amp;{TestData}</var>
+<arg>TestData.xlsx</arg>
+<arg>ServiceWA</arg>
+<arg>Login001</arg>
+<doc>Load Test Data From an Excel(.xls) File</doc>
+<status status="PASS" start="2026-03-14T00:33:15.239244" elapsed="4.465310"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Login001</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.704554" elapsed="0.000541"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.706174" level="INFO">Environment variable 'TCID' set to value 'TestcaseID'.</msg>
+<arg>TCID</arg>
+<arg>${TestData.TestcaseID}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.705095" elapsed="0.001079"/>
+</kw>
+<kw name="Extent TestCaseHeader" owner="ExtentReportListener">
+<arg>${TEST NAME}</arg>
+<arg>${TestData.TestcaseID}</arg>
+<arg>ServiceWA Application</arg>
+<status status="PASS" start="2026-03-14T00:33:19.706705" elapsed="0.000531"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.707770" level="INFO">Launching Application</msg>
+<arg>Launching Application</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.707770" elapsed="0.000000"/>
+</kw>
+<kw name="Launch Application" owner="Common">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.708654" level="INFO">Inside Launch Application</msg>
+<arg>Inside Launch Application</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.708654" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.708654" level="INFO">Platform: Mobile</msg>
+<arg>Platform: %{EXECUTION_PLATFORM}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.708654" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;%{EXECUTION_PLATFORM}&quot; == &quot;Mobile&quot;">
+<kw name="Import Library" owner="BuiltIn">
+<arg>AppiumLibrary</arg>
+<arg>timeout=90</arg>
+<doc>Imports a library with the given name and optional arguments.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.709420" elapsed="0.009897"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.719317" level="INFO">Appium Library Loaded</msg>
+<arg>Appium Library Loaded</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.719317" elapsed="0.000000"/>
+</kw>
+<kw name="Launch Mobile Application on BrowserStack" owner="AppiumCommon">
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.720689" level="INFO">${LOGIN STATUS} = False</msg>
+<arg>${LOGIN STATUS}</arg>
+<arg>False</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.719993" elapsed="0.000696"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Inside~Launch Mobile Application 1</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.720689" elapsed="0.000667"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Device Name : %{DEVICE_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.721356" elapsed="0.000767"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>App Path : %{APP_PATH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.722123" elapsed="0.000759"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.722882" level="INFO">${DevName} = iPhone 15 Pro</msg>
+<var>${DevName}</var>
+<arg>%{DEVICE_NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.722882" elapsed="0.000000"/>
+</kw>
+<kw name="Load Config Properties Data" owner="PropertyUtilities">
+<kw name="Read Properties" owner="ReadConfig_Properties">
+<msg time="2026-03-14T00:33:19.724355" level="INFO">{'ConnectionURL': 'http://sundarnatarajan_iqyk45:wtYGx3ewdxiUVMBvSFX8@hub-cloud.browserstack.com/wd/hub', 'App_Environment': 'QA', 'TestType': 'smoke', 'App_Version': 'Android - Version 3.95.019 (92) &amp; iOS - 3.95.026 (72)', 'QA_URL': 'NA', 'MobileTestExecutionPlatform': 'BrowserStack', 'App_Path_Android': 'bs://0882dc2c9caaa9fac3f13d49486c913c13e48550 ', 'App_Path_iOS': 'bs://2252459fbfdeb65d27a17e8b5a0761a3180cc5fc', 'ExecutionPlatform': 'Mobile', 'OS_ExecutionPlatform': 'IOS', 'Orientation': 'PORTRAIT', 'AndroidDeviceName': 'Google Pixel 9', 'iOSDeviceName': 'iPhone 15 Pro', 'UserAccount': 'Batch1', 'App_URL': 'NA', 'Browser': 'chrome', 'PIPELINE_EXECUTION': 'false', 'CaptureScreenShotsOnlyForFailure': 'False', 'BASE_URL': 'na'}</msg>
+<msg time="2026-03-14T00:33:19.724355" level="INFO">&amp;{Load Prop} = { ConnectionURL=http://sundarnatarajan_iqyk45:wtYGx3ewdxiUVMBvSFX8@hub-cloud.browserstack.com/wd/hub | App_Environment=QA | TestType=smoke | App_Version=Android - Version 3.95.019 (92) &amp; iOS - 3.95.02...</msg>
+<var>&amp;{Load Prop}</var>
+<arg>${PROPERTY FILE PATH}</arg>
+<status status="PASS" start="2026-03-14T00:33:19.723677" elapsed="0.000678"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Load Prop}[ConnectionURL]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.724355" elapsed="0.000951"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.725306" level="INFO">Environment variable 'MobileTestExecutionPlatform' set to value 'BrowserStack'.</msg>
+<arg>MobileTestExecutionPlatform</arg>
+<arg>${Load Prop}[MobileTestExecutionPlatform]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.725306" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.725306" level="INFO">Environment variable 'ANDROID_DEVICE_NAME' set to value 'Google Pixel 9'.</msg>
+<arg>ANDROID_DEVICE_NAME</arg>
+<arg>${Load Prop}[AndroidDeviceName]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.725306" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.725306" level="INFO">Environment variable 'IOS_DEVICE_NAME' set to value 'iPhone 15 Pro'.</msg>
+<arg>IOS_DEVICE_NAME</arg>
+<arg>${Load Prop}[iOSDeviceName]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.725306" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.726242" level="INFO">Environment variable 'CONNECTION_URL' set to value 'http://sundarnatarajan_iqyk45:wtYGx3ewdxiUVMBvSFX8@hub-cloud.browserstack.com/wd/hub'.</msg>
+<arg>CONNECTION_URL</arg>
+<arg>${Load Prop}[ConnectionURL]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.726242" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.726242" level="INFO">Environment variable 'TEST_TYPE' set to value 'smoke'.</msg>
+<arg>TEST_TYPE</arg>
+<arg>${Load Prop}[TestType]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.726242" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.726242" level="INFO">Environment variable 'USER_ACCOUNT' set to value 'Batch1'.</msg>
+<arg>USER_ACCOUNT</arg>
+<arg>${Load Prop}[UserAccount]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.726242" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.726943" level="INFO">Environment variable 'PIPELINE_EXECUTION' set to value 'false'.</msg>
+<arg>PIPELINE_EXECUTION</arg>
+<arg>${Load Prop}[PIPELINE_EXECUTION]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.726943" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.726943" level="INFO">Environment variable 'MOBILE_VIEW' set to value 'NA'.</msg>
+<arg>MOBILE_VIEW</arg>
+<arg>${Load Prop}[QA_URL]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.726943" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.726943" level="INFO">Environment variable 'EXECUTION_PLATFORM' set to value 'Mobile'.</msg>
+<arg>EXECUTION_PLATFORM</arg>
+<arg>${Load Prop}[ExecutionPlatform]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.726943" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.726943" level="INFO">Environment variable 'APP_URL' set to value 'NA'.</msg>
+<arg>APP_URL</arg>
+<arg>${Load Prop}[App_URL]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.726943" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.727677" level="INFO">Environment variable 'BROWSER' set to value 'chrome'.</msg>
+<arg>BROWSER</arg>
+<arg>${Load Prop}[Browser]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.727677" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.727677" level="INFO">Environment variable 'MOBILE_VIEW' set to value 'NA'.</msg>
+<arg>MOBILE_VIEW</arg>
+<arg>${Load Prop}[QA_URL]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.727677" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.728229" level="INFO">Environment variable 'CaptureScreenShotsOnlyForFailure' set to value 'False'.</msg>
+<arg>CaptureScreenShotsOnlyForFailure</arg>
+<arg>${Load Prop}[CaptureScreenShotsOnlyForFailure]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.727677" elapsed="0.000552"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.728229" level="INFO">Environment variable 'BASE_URL' set to value 'na'.</msg>
+<arg>BASE_URL</arg>
+<arg>${Load Prop}[BASE_URL]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.728229" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.728766" level="INFO">Execution Platform is IOS</msg>
+<arg>Execution Platform is ${Load Prop}[OS_ExecutionPlatform]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.728229" elapsed="0.000537"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${Load Prop}[OS_ExecutionPlatform]&quot; == &quot;Android&quot;">
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<arg>DEVICE_NAME</arg>
+<arg>${Load Prop}[AndroidDeviceName]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.728766" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<arg>APP_PATH</arg>
+<arg>${Load Prop}[App_Path_Android]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.728766" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.728766" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.729291" level="INFO">Environment variable 'DEVICE_NAME' set to value 'iPhone 15 Pro'.</msg>
+<arg>DEVICE_NAME</arg>
+<arg>${Load Prop}[iOSDeviceName]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.729291" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.729291" level="INFO">Environment variable 'APP_PATH' set to value 'bs://2252459fbfdeb65d27a17e8b5a0761a3180cc5fc'.</msg>
+<arg>APP_PATH</arg>
+<arg>${Load Prop}[App_Path_iOS]</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.729291" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.728766" elapsed="0.000525"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.728766" elapsed="0.000525"/>
+</if>
+<return>
+<value>&amp;{Load Prop}</value>
+<status status="PASS" start="2026-03-14T00:33:19.729291" elapsed="0.000000"/>
+</return>
+<msg time="2026-03-14T00:33:19.729291" level="INFO">&amp;{prop} = { ConnectionURL=http://sundarnatarajan_iqyk45:wtYGx3ewdxiUVMBvSFX8@hub-cloud.browserstack.com/wd/hub | App_Environment=QA | TestType=smoke | App_Version=Android - Version 3.95.019 (92) &amp; iOS - 3.95.02...</msg>
+<var>&amp;{prop}</var>
+<doc>Keyword wrapper to load the properties file</doc>
+<status status="PASS" start="2026-03-14T00:33:19.722882" elapsed="0.007213"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Loaded Properties Data</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.730095" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.730924" level="INFO">${App Path} = bs://2252459fbfdeb65d27a17e8b5a0761a3180cc5fc</msg>
+<var>${App Path}</var>
+<arg>%{APP_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.730924" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.731998" level="INFO">${orientation} = PORTRAIT</msg>
+<var>${orientation}</var>
+<arg>${prop.Orientation}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.730924" elapsed="0.001074"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.731998" level="INFO">Environment variable 'DEVICE_NAME' set to value 'iPhone 15 Pro'.</msg>
+<arg>DEVICE_NAME</arg>
+<arg>${DevName}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.731998" elapsed="0.000000"/>
+</kw>
+<kw name="Load Server Config Data" owner="DataUtility">
+<kw name="Generate Random String" owner="String">
+<msg time="2026-03-14T00:33:19.732523" level="INFO">${doc_id} = 7022</msg>
+<var>${doc_id}</var>
+<arg>4</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.732523" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${APPIUM SERVER Config}\\${FileName}</arg>
+<arg>${doc_id}</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.733058" elapsed="0.014328"/>
+</kw>
+<kw name="Read Excel Column" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.747922" level="INFO">@{COLUMN VALUE} = [ Device_Name | iPhone 12 Pro | iPhone 8 | iPad Pro 12.9 2017 | iPad Pro 12.9 | Samsung Galaxy S21 5G | Samsung Galaxy Tab A 10.1 2019 | iPhone SE 2022 | iPad Mini 2 | Samsung Galaxy Note 20 Ultra 5G ...</msg>
+<var>@{COLUMN VALUE}</var>
+<arg>col_num=1</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.747922" elapsed="0.000000"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.748457" level="INFO">Length is 64.</msg>
+<msg time="2026-03-14T00:33:19.748457" level="INFO">${ROW COUNT} = 64</msg>
+<var>${ROW COUNT}</var>
+<arg>${COLUMN VALUE}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.748457" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Inside~Load Server Config Data</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.748457" elapsed="0.000526"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Device Name : %{DEVICE_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.749519" elapsed="0.000808"/>
+</kw>
+<kw name="Get Index From List" owner="Collections">
+<msg time="2026-03-14T00:33:19.750327" level="INFO">${DEVICE ROW NUMBER} = 56</msg>
+<var>${DEVICE ROW NUMBER}</var>
+<arg>${COLUMN VALUE}</arg>
+<arg>%{DEVICE_NAME}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.750327" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.751036" level="INFO">${DEVICE ROW NUMBER} = 57</msg>
+<var>${DEVICE ROW NUMBER}</var>
+<arg>int(${DEVICE ROW NUMBER}) + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.751036" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Row" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.751036" level="INFO">@{SELECTED DEVICE VALUE} = [ iPhone 15 Pro | Mobile | iOS | 17 | 0000 | None | BroswerStack ]</msg>
+<var>@{SELECTED DEVICE VALUE}</var>
+<arg>row_num=${DEVICE ROW NUMBER}</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a row from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.751036" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Row" owner="ExcelLibrary">
+<msg time="2026-03-14T00:33:19.751828" level="INFO">@{HEADER ROW VALUE} = [ Device_Name | Device_Type | Device_OS | OS_version | Appium_port | Cloud_Device_Type | Platform ]</msg>
+<var>@{HEADER ROW VALUE}</var>
+<arg>row_num=1</arg>
+<arg>sheet_name=${Sheet Name}</arg>
+<doc>Returns content of a row from the current sheet of the document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.751828" elapsed="0.000000"/>
+</kw>
+<kw name="Convert Two List Into Dictionary" owner="DataUtility">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.752581" level="INFO">&amp;{Dict Data} = { }</msg>
+<var>&amp;{Dict Data}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.752581" elapsed="0.000000"/>
+</kw>
+<for flavor="IN ZIP">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.753283" level="FAIL">'iPhone 15 Pro' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.752581" elapsed="0.000702">'iPhone 15 Pro' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.753283" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.752581" elapsed="0.000702"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.753283" level="FAIL">'iPhone 15 Pro' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.753283" elapsed="0.000000">'iPhone 15 Pro' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.753933" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.753283" elapsed="0.000650"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.753933" level="INFO">${value} = iPhone 15 Pro</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.753933" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.753933" elapsed="0.000529"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.753933" elapsed="0.000529"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.754462" level="INFO">${value} = iPhone 15 Pro</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.754462" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.754462" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.754462" elapsed="0.000658"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.754462" elapsed="0.000658"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.755120" elapsed="0.000000"/>
+</kw>
+<var name="${key}">Device_Name</var>
+<var name="${value}">iPhone 15 Pro</var>
+<status status="PASS" start="2026-03-14T00:33:19.752581" elapsed="0.002539"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.755985" level="FAIL">'Mobile' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.755985" elapsed="0.000000">'Mobile' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.755985" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.755985" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.756912" level="FAIL">'Mobile' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.756912" elapsed="0.000954">'Mobile' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.757866" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.755985" elapsed="0.001881"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.757866" level="INFO">${value} = Mobile</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.757866" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.757866" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.757866" elapsed="0.000000"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.758546" level="INFO">${value} = Mobile</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.758546" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.758546" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.758546" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.758546" elapsed="0.000000"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.758546" elapsed="0.000000"/>
+</kw>
+<var name="${key}">Device_Type</var>
+<var name="${value}">Mobile</var>
+<status status="PASS" start="2026-03-14T00:33:19.755120" elapsed="0.003426"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.759244" level="FAIL">'iOS' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.759244" elapsed="0.000000">'iOS' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.759244" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.759244" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.760034" level="FAIL">'iOS' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.760034" elapsed="0.000000">'iOS' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.760034" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.759244" elapsed="0.000790"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.760558" level="INFO">${value} = iOS</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.760034" elapsed="0.000524"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.760034" elapsed="0.000524"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.760034" elapsed="0.000524"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.761092" level="INFO">${value} = iOS</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.761092" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.761092" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.761092" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.761092" elapsed="0.000000"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.761092" elapsed="0.000792"/>
+</kw>
+<var name="${key}">Device_OS</var>
+<var name="${value}">iOS</var>
+<status status="PASS" start="2026-03-14T00:33:19.759244" elapsed="0.002640"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.761884" level="FAIL">'17' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.761884" elapsed="0.000000">'17' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.762689" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.761884" elapsed="0.000805"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.762689" level="FAIL">'17' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.762689" elapsed="0.000000">'17' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.762689" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.762689" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.763436" level="INFO">${value} = 17</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.762689" elapsed="0.000747"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.762689" elapsed="0.000747"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.762689" elapsed="0.000747"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.763436" level="INFO">${value} = 17</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.763436" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.763436" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.763436" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.763436" elapsed="0.000000"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.763436" elapsed="0.000000"/>
+</kw>
+<var name="${key}">OS_version</var>
+<var name="${value}">17</var>
+<status status="PASS" start="2026-03-14T00:33:19.761884" elapsed="0.002375"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.764259" level="FAIL">'0000' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.764259" elapsed="0.000000">'0000' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.764939" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.764259" elapsed="0.000680"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.764939" level="FAIL">'0000' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.764939" elapsed="0.000000">'0000' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.764939" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.764939" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.765745" level="INFO">${value} = 0000</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.765745" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.764939" elapsed="0.000806"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.764939" elapsed="0.000806"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.765745" level="INFO">${value} = 0000</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.765745" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.765745" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.765745" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.765745" elapsed="0.000000"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.766624" elapsed="0.000000"/>
+</kw>
+<var name="${key}">Appium_port</var>
+<var name="${value}">0000</var>
+<status status="PASS" start="2026-03-14T00:33:19.764259" elapsed="0.002365"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.766624" level="FAIL">TypeError: argument of type 'NoneType' is not iterable</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.766624" elapsed="0.000000">TypeError: argument of type 'NoneType' is not iterable</status>
+</kw>
+<msg time="2026-03-14T00:33:19.766624" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.766624" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.767444" level="FAIL">TypeError: argument of type 'NoneType' is not iterable</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.767444" elapsed="0.000000">TypeError: argument of type 'NoneType' is not iterable</status>
+</kw>
+<msg time="2026-03-14T00:33:19.768338" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.767444" elapsed="0.000894"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.768879" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.768338" elapsed="0.000541"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.768338" elapsed="0.000541"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.768338" elapsed="0.000541"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.768879" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.768879" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.769407" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.768879" elapsed="0.000528"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.768879" elapsed="0.000528"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.769407" elapsed="0.000000"/>
+</kw>
+<var name="${key}">Cloud_Device_Type</var>
+<var name="${value}">None</var>
+<status status="PASS" start="2026-03-14T00:33:19.766624" elapsed="0.002783"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.769938" level="FAIL">'BroswerStack' does not contain '"'</msg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.769938" elapsed="0.000000">'BroswerStack' does not contain '"'</status>
+</kw>
+<msg time="2026-03-14T00:33:19.769938" level="INFO">${STATUS} = False</msg>
+<var>${STATUS}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>"</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.769938" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.770467" level="FAIL">'BroswerStack' does not contain '''</msg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.770467" elapsed="0.000000">'BroswerStack' does not contain '''</status>
+</kw>
+<msg time="2026-03-14T00:33:19.770467" level="INFO">${STATUS1} = False</msg>
+<var>${STATUS1}</var>
+<arg>Should Contain</arg>
+<arg>${value}</arg>
+<arg>'</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.770467" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${STATUS} and not ${STATUS1}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.770995" level="INFO">${value} = BroswerStack</msg>
+<var>${value}</var>
+<arg>str('${value}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.770995" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:19.770467" elapsed="0.000528"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.770467" elapsed="0.000528"/>
+</if>
+<kw name="Strip String" owner="String">
+<msg time="2026-03-14T00:33:19.770995" level="INFO">${value} = BroswerStack</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.770995" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${key}' == 'Catalog'">
+<kw name="Convert To Upper Case" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:19.770995" elapsed="0.001539"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:19.770995" elapsed="0.001539"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:19.770995" elapsed="0.001539"/>
+</if>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${Dict Data}</arg>
+<arg>${Key}</arg>
+<arg>${value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.772534" elapsed="0.000000"/>
+</kw>
+<var name="${key}">Platform</var>
+<var name="${value}">BroswerStack</var>
+<status status="PASS" start="2026-03-14T00:33:19.769407" elapsed="0.003127"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>${LIST1}</value>
+<value>${LIST2}</value>
+<status status="PASS" start="2026-03-14T00:33:19.752581" elapsed="0.019953"/>
+</for>
+<return>
+<value>&amp;{Dict Data}</value>
+<status status="PASS" start="2026-03-14T00:33:19.772534" elapsed="0.000710"/>
+</return>
+<msg time="2026-03-14T00:33:19.773244" level="INFO">&amp;{Appium Config Dict} = { Device_Name=iPhone 15 Pro | Device_Type=Mobile | Device_OS=iOS | OS_version=17 | Appium_port=0000 | Cloud_Device_Type=None | Platform=BroswerStack }</msg>
+<var>&amp;{Appium Config Dict}</var>
+<arg>${HEADER ROW VALUE}</arg>
+<arg>${SELECTED DEVICE VALUE}</arg>
+<doc>keyword wrapper to convert the two list into dictionary</doc>
+<status status="PASS" start="2026-03-14T00:33:19.751828" elapsed="0.021416"/>
+</kw>
+<kw name="Close Current Excel Document" owner="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.773244" elapsed="0.000000"/>
+</kw>
+<return>
+<value>&amp;{Appium Config Dict}</value>
+<status status="PASS" start="2026-03-14T00:33:19.773244" elapsed="0.000000"/>
+</return>
+<msg time="2026-03-14T00:33:19.773244" level="INFO">&amp;{App Config} = { Device_Name=iPhone 15 Pro | Device_Type=Mobile | Device_OS=iOS | OS_version=17 | Appium_port=0000 | Cloud_Device_Type=None | Platform=BroswerStack }</msg>
+<var>&amp;{App Config}</var>
+<arg>${File Path}</arg>
+<arg>${Sheet Name}</arg>
+<doc>Load The Appium Server Config Data From an Excel(.xls) File</doc>
+<status status="PASS" start="2026-03-14T00:33:19.732523" elapsed="0.040721"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.774473" level="INFO">${Device} = iPhone 15 Pro</msg>
+<var>${Device}</var>
+<arg>${App Config.Device_Name}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.773920" elapsed="0.000553"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.774995" level="INFO">${Device Type} = Mobile</msg>
+<var>${Device Type}</var>
+<arg>${App Config.Device_Type}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.774473" elapsed="0.000522"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.775797" level="INFO">${OS} = iOS</msg>
+<var>${OS}</var>
+<arg>${App Config.Device_OS}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.774995" elapsed="0.000802"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.776332" level="INFO">${OS Version} = 17</msg>
+<var>${OS Version}</var>
+<arg>${App Config.OS_version}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.775797" elapsed="0.000535"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.777383" level="INFO">${Port} = 0000</msg>
+<var>${Port}</var>
+<arg>${App Config.Appium_port}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.776860" elapsed="0.000523"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.777383" level="INFO">Environment variable 'L_DeviceName' set to value 'iPhone 15 Pro'.</msg>
+<arg>L_DeviceName</arg>
+<arg>${Device}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.777383" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.777941" level="INFO">Environment variable 'L_OS' set to value 'iOS'.</msg>
+<arg>L_OS</arg>
+<arg>${OS}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.777383" elapsed="0.000558"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.777941" level="INFO">Environment variable 'L_OS_Version' set to value '17'.</msg>
+<arg>L_OS_Version</arg>
+<arg>${OS Version}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.777941" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.777941" level="INFO">Environment variable 'L_AppPath' set to value 'bs://2252459fbfdeb65d27a17e8b5a0761a3180cc5fc'.</msg>
+<arg>L_AppPath</arg>
+<arg>%{APP_PATH}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.777941" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.778998" level="INFO">Environment variable 'L_Orientation' set to value 'PORTRAIT'.</msg>
+<arg>L_Orientation</arg>
+<arg>${prop.Orientation}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.778465" elapsed="0.000533"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Inside~Launch Mobile Application 2</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.778998" elapsed="0.000558"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Device Name : %{DEVICE_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.779556" elapsed="0.000680"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.780612" level="INFO">Environment variable 'Device OS' set to value 'iOS'.</msg>
+<arg>Device OS</arg>
+<arg>${OS}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.780612" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.781147" level="INFO">Environment variable 'Device Type' set to value 'Mobile'.</msg>
+<arg>Device Type</arg>
+<arg>${Device Type}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.781147" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.781147" level="INFO">Environment variable 'OS Version' set to value '17'.</msg>
+<arg>OS Version</arg>
+<arg>${OS Version}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.781147" elapsed="0.000000"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.782723" level="INFO">Environment variable 'App Environment' set to value 'QA'.</msg>
+<arg>App Environment</arg>
+<arg>${prop.App_Environment}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.781864" elapsed="0.000859"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.783299" level="INFO">Environment variable 'App Version' set to value 'Android - Version 3.95.019 (92) &amp; iOS - 3.95.026 (72)'.</msg>
+<arg>App Version</arg>
+<arg>${prop.App_Version}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.782723" elapsed="0.001059"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2026-03-14T00:33:19.784491" level="INFO">Environment variable 'Device_Orientation' set to value 'PORTRAIT'.</msg>
+<arg>Device_Orientation</arg>
+<arg>${prop.Orientation}</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.783782" elapsed="0.000709"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Mobile View :&gt; %{MOBILE_VIEW}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.784491" elapsed="0.000527"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.785643" level="INFO">${URL} = http://sundarnatarajan_iqyk45:wtYGx3ewdxiUVMBvSFX8@hub-cloud.browserstack.com/wd/hub</msg>
+<var>${URL}</var>
+<arg>"${Port}" == "0000"</arg>
+<arg>%{CONNECTION_URL}</arg>
+<arg>http://localhost:${Port}/wd/hub</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.785018" elapsed="0.000625"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-14T00:33:19.785643" level="INFO">Launching Mobile App</msg>
+<arg>Launching Mobile App</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-14T00:33:19.785643" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Open Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot">
+<msg time="2026-03-14T00:33:21.310106" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<status status="FAIL" start="2026-03-14T00:33:21.309292" elapsed="0.000814">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</status>
+</kw>
+<msg time="2026-03-14T00:33:21.311705" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2026-03-14T00:33:21.321839" level="FAIL">WebDriverException: Message: App Automate testing time has expired. Contact BrowserStack Support at https://www.browserstack.com/contact for extending your Free Trial.
+</msg>
+<arg>${URL}</arg>
+<arg>platformName=${OS}</arg>
+<arg>platformVersion=${OS Version}</arg>
+<arg>deviceName=${Device}</arg>
+<arg>app=${App Path}</arg>
+<arg>autoDismissAlerts=true</arg>
+<arg>orientation=${orientation}</arg>
+<arg>name=${TEST NAME}</arg>
+<arg>cacheId=${Device}</arg>
+<arg>newCommandTimeout=180</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.786128" elapsed="1.569948">WebDriverException: Message: App Automate testing time has expired. Contact BrowserStack Support at https://www.browserstack.com/contact for extending your Free Trial.
+</status>
+</kw>
+<arg>"%{MOBILE_VIEW}" == "NA" and "${OS}" == "iOS" and "${Port}" == "0000"</arg>
+<arg>Open Application</arg>
+<arg>${URL}</arg>
+<arg>platformName=${OS}</arg>
+<arg>platformVersion=${OS Version}</arg>
+<arg>deviceName=${Device}</arg>
+<arg>app=${App Path}</arg>
+<arg>autoDismissAlerts=true</arg>
+<arg>orientation=${orientation}</arg>
+<arg>name=${TEST NAME}</arg>
+<arg>cacheId=${Device}</arg>
+<arg>newCommandTimeout=180</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.786128" elapsed="1.569948">WebDriverException: Message: App Automate testing time has expired. Contact BrowserStack Support at https://www.browserstack.com/contact for extending your Free Trial.
+</status>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>"%{MOBILE_VIEW}" == "NA" and "${OS}" == "Android" and "${Port}" == "0000"</arg>
+<arg>Open Application</arg>
+<arg>${REMOTE_URL}</arg>
+<arg>app=${App Path}</arg>
+<arg>name=${TEST NAME}</arg>
+<arg>build=RobotFramework</arg>
+<arg>platformName=${OS}</arg>
+<arg>os_version=${OS Version}</arg>
+<arg>deviceName=${Device}</arg>
+<arg>autoGrantPermissions=false</arg>
+<arg>autoDismissAlerts=true</arg>
+<arg>interactiveDebugging=true</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.356612" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Launched Mobile App</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.356612" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>**** Clicked on Enable Location while using the app ***</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.356612" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>10</arg>
+<arg>Wait for all context to be available</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.356612" elapsed="0.000527"/>
+</kw>
+<kw name="Get Contexts" owner="AppiumLibrary">
+<var>${contexts}</var>
+<doc>Get available contexts.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.357139" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Contexts:-${contexts}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.357682" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>"${OS}" == "Android" and "${OS Version}" == "Chrome"</arg>
+<arg>Switch To Context</arg>
+<arg>${contexts}[0]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.357682" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Contexts:-${contexts}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.357682" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Context" owner="AppiumLibrary">
+<var>${context}</var>
+<doc>Get current context.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.357682" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${STATUS}</var>
+<arg>"WEBVIEW" in """${context}"""</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.357682" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Context: ${context}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.357682" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Status : ${STATUS}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.357682" elapsed="0.000000"/>
+</kw>
+<arg>MobileConfig.xlsx</arg>
+<arg>AppiumConfig</arg>
+<doc>Keyword to Launch Application based on execution location, device type and required capablities</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.719317" elapsed="1.638365">WebDriverException: Message: App Automate testing time has expired. Contact BrowserStack Support at https://www.browserstack.com/contact for extending your Free Trial.
+</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Launched Mobile Application</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.358502" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-03-14T00:33:19.708654" elapsed="1.649848">WebDriverException: Message: App Automate testing time has expired. Contact BrowserStack Support at https://www.browserstack.com/contact for extending your Free Trial.
+</status>
+</branch>
+<status status="FAIL" start="2026-03-14T00:33:19.708654" elapsed="1.649848">WebDriverException: Message: App Automate testing time has expired. Contact BrowserStack Support at https://www.browserstack.com/contact for extending your Free Trial.
+</status>
+</if>
+<arg>MobileConfig.xlsx</arg>
+<arg>AppiumConfig</arg>
+<arg>${prop.App_URL}</arg>
+<doc>Keyword to Launch Application based on execution location, device type and required capablities</doc>
+<status status="FAIL" start="2026-03-14T00:33:19.707770" elapsed="1.650732">WebDriverException: Message: App Automate testing time has expired. Contact BrowserStack Support at https://www.browserstack.com/contact for extending your Free Trial.
+</status>
+</kw>
+<kw name="Login to the App" owner="SignInScreen">
+<arg>username@servicewa.com</arg>
+<arg>myPassword</arg>
+<doc>Keyword to Login to Mobile Application through Shopping Cart</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.358502" elapsed="0.000000"/>
+</kw>
+<kw name="Link to the FishCatchWA" owner="LinkableService">
+<doc>link the FishCatchWA Mobile Application through Discovery</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.360202" elapsed="0.000000"/>
+</kw>
+<tag>Login001</tag>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<status status="FAIL" start="2026-03-14T00:33:15.227998" elapsed="6.132961">WebDriverException: Message: App Automate testing time has expired. Contact BrowserStack Support at https://www.browserstack.com/contact for extending your Free Trial.
+</status>
+</test>
+<kw name="Close Application" owner="Common" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Inside~ Close application %{EXECUTION_PLATFORM}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:21.363081" elapsed="0.000559"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;%{EXECUTION_PLATFORM}&quot; == &quot;Mobile&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Closing Mobile Application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:21.363714" elapsed="0.000647"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot">
+<msg time="2026-03-14T00:33:21.364725" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<status status="FAIL" start="2026-03-14T00:33:21.364725" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</status>
+</kw>
+<msg time="2026-03-14T00:33:21.367340" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2026-03-14T00:33:21.367884" level="FAIL">No application is open</msg>
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="FAIL" start="2026-03-14T00:33:21.364361" elapsed="0.004050">No application is open</status>
+</kw>
+<status status="FAIL" start="2026-03-14T00:33:21.363714" elapsed="0.004697">No application is open</status>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Closing Web Application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.368938" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-03-14T00:33:21.369197" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-14T00:33:21.368411" elapsed="0.000786"/>
+</branch>
+<status status="FAIL" start="2026-03-14T00:33:21.363714" elapsed="0.005549">No application is open</status>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>*** Closed the application ***</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:21.369263" elapsed="0.000204"/>
+</kw>
+<kw name="Close Extent Report" owner="ExtentReportListener">
+<status status="PASS" start="2026-03-14T00:33:21.369467" elapsed="0.020782"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Dir: ${EXECDIR}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:21.390901" elapsed="0.000526"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-14T00:33:22.391822" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-14T00:33:21.391506" elapsed="1.000316"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2026-03-14T00:33:22.392640" level="INFO">${PIPELINE_EXECUTION} = false</msg>
+<var>${PIPELINE_EXECUTION}</var>
+<arg>%{PIPELINE_EXECUTION}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2026-03-14T00:33:22.391822" elapsed="0.000818"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>PipeLineExecution: ${PIPELINE_EXECUTION}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:22.392640" elapsed="0.000526"/>
+</kw>
+<if>
+<branch type="IF" condition="'${PIPELINE_EXECUTION}' == 'false'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Inside ~ IF</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:22.393705" elapsed="0.000000"/>
+</kw>
+<kw name="Start Process" owner="Process">
+<msg time="2026-03-14T00:33:22.394205" level="INFO">Starting process:
+java -jar \"D:\Users\snatarajan\Desktop\Sundar\ServiceWAMobile\ServiceWA\ServiceWA\ExtentUtilitiesiComfortWebMobileEmailableReport.jar\"</msg>
+<arg>java</arg>
+<arg>-jar</arg>
+<arg>"${EXECDIR}\iComfortWebMobileEmailableReport.jar"</arg>
+<doc>Starts a new process on background.</doc>
+<status status="PASS" start="2026-03-14T00:33:22.394205" elapsed="0.005122"/>
+</kw>
+<kw name="Wait For Process" owner="Process">
+<msg time="2026-03-14T00:33:22.399843" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-03-14T00:33:22.500291" level="INFO">Process completed.</msg>
+<msg time="2026-03-14T00:33:22.500291" level="INFO">${result} = &lt;result object with rc 1&gt;</msg>
+<var>${result}</var>
+<arg>timeout=1min 30s</arg>
+<arg>on_timeout=kill</arg>
+<doc>Waits for the process to complete or to reach the given timeout.</doc>
+<status status="PASS" start="2026-03-14T00:33:22.399327" elapsed="0.101486"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Result: ${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-14T00:33:22.500813" elapsed="0.000521"/>
+</kw>
+<status status="PASS" start="2026-03-14T00:33:22.393166" elapsed="0.108168"/>
+</branch>
+<status status="PASS" start="2026-03-14T00:33:22.393166" elapsed="0.108168"/>
+</if>
+<doc>Wrapper keyword to close application</doc>
+<status status="FAIL" start="2026-03-14T00:33:21.362561" elapsed="1.138773">No application is open</status>
+</kw>
+<doc>These test cases used for checking Login Options by using ServiceWA app</doc>
+<status status="FAIL" start="2026-03-14T00:33:14.378445" elapsed="8.123476">Suite teardown failed:
+No application is open</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Login001</stat>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+<stat pass="0" fail="1" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="LinkableServiceWAServices">LinkableServiceWAServices</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-03-14T00:33:21.311705" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2026-03-14T00:33:21.367340" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+</errors>
+</robot>

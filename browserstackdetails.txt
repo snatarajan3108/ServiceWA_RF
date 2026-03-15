@@ -1,0 +1,5 @@
+Access Key	wtYGx3ewdxiUVMBvSFX8
+id sundarnatarajan_iqyk45
+
+bs://c5f215a5cc46e0205940ec7493a525ef44b3d7bb
+robot -d .\logssundar ..\rf-tests\ServiceWA_login.robot 
