@@ -23,7 +23,7 @@ ${ios_FishCatchWA}        //XCUIElementTypeOther[@name="FishCatchWA"]
 ${ios_Next}    //XCUIElementTypeButton[@name="Next"]
 ${ios_IAgree}    //XCUIElementTypeButton[@name="I Agree"]
 #${ios_BackToServiceWA}    //XCUIElementTypeImage[@name="ServiceWA"]
-${ios_BackToServiceWA}    //XCUIElementTypeImage[@name="ServiceWA"]//XCUIElementTypeImage[@name="ServiceWA"]
+${ios_BackToServiceWA}    //XCUIElementTypeApplication[@name="service double you ay"]/following::XCUIElementTypeImage[@name="ServiceWA"]
 ${ios_Linked}    //XCUIElementTypeStaticText[@name="Linked"]
 
 *** Keywords ***

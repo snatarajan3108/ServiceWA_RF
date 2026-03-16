@@ -230,11 +230,42 @@ Login to the App
 #        Log To Console    Executing in Android
 #    END
 #    Swipe     0    495    0    150
-    Scroll To Given Element  ${GoToSettings}
+#    Common.Scroll To Given Element  ${GoToSettings}
     Common.Wait for Element Visibility    ${GoToSettings}   Settings Icon
     Common.Click Button    ${GoToSettings}    GoToSettings
+
     Common.Wait for Element Visibility    ${LoginToServiceWA}   LoginToServiceWA Button
     Common.Click Button    ${LoginToServiceWA}    LoginToServiceWA
+    Swipe     0    495    0    150
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                    Swipe     0    495    0    150
+
+#   Common.Scroll To Given Element   ${IAgree}
+    Common.Wait for Element Visibility    ${IAgree}   IAgree Button
+    Common.Element Should Be Enabled   ${IAgree}
+    Common.Click Button    ${IAgree}    IAgree
+
+
+    Common.Wait for Element Visibility    ${NextLoginCreateDigitalID}   Next Button
+    Common.Element Should Be Enabled   ${NextLoginCreateDigitalID}
+    Common.Click Button    ${NextLoginCreateDigitalID}    Next
+
+    Common.Wait for Element Visibility    ${ReadyToBegin}   ReadyToBegin Button
+    Common.Element Should Be Enabled   ${ReadyToBegin}
+    Common.Click Button    ${ReadyToBegin}    ReadyToBegin
+
+    Common.Wait for Element Visibility    ${ContinueWithDigitalID}   ContinueWithDigitalID Button
+    Common.Element Should Be Enabled   ${ContinueWithDigitalID}
+    Common.Click Button    ${ContinueWithDigitalID}    ContinueWithDigitalID
+
+    Common.Scroll To Given Element   ${SelectMyID}
+     Common.Wait for Element Visibility    ${SelectMyID}   SelectMyID Button
+    Common.Element Should Be Enabled   ${SelectMyID}
+    Common.Click Button    ${SelectMyID}    SelectMyID
+
+
+
 
 
 

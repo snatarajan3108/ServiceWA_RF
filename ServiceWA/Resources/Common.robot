@@ -163,12 +163,13 @@ Element Should Be Enabled
         SeleniumLibrary.Element Should Be Enabled  ${ElementIdentifier}
     END
 
+
 Scroll To Given Element
     [Documentation]    Keyword to scroll to an element
     [Arguments]  ${ElementIdentifier}
     Wait for Element      ${ElementIdentifier}
     IF  "%{EXECUTION_PLATFORM}" == "Mobile"
-        #AppiumCommon.Scroll Element Into View  ${ElementIdentifier}
+        AppiumCommon.Scroll Element Into View  ${ElementIdentifier}
         Log to console      Scrolling to element
     ELSE
           SeleniumLibrary.Scroll Element Into View    ${ElementIdentifier}

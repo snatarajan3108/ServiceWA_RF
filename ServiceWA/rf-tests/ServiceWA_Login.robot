@@ -49,6 +49,7 @@ Stability_TC_02_Mobile Validation of login
         SignInScreen.Login to the App    username@servicewa.com    myPassword
 
 
+
 #Stability_TC_02_Mobile App_Validation of login and logout
 #
 #        Log to Console  *************************************** User to perform Login & logout from  Mobile app ***************************************
