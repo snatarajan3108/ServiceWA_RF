@@ -34,7 +34,7 @@ Suite Teardown  Common.Close Application
 
 Stability_TC_02_Mobile Validation of login
         Log to Console  *************************************** User to perform Login & logout from  Mobile app ***************************************
-        [Tags]  Login001       Smoke      Regression
+        [Tags]  Login002       Smoke      Regression
          &{prop}=    Load Config Properties Data
          &{TestData}=   Load Test Data From File   TestData.xlsx   ServiceWA  Login001
         log to console      Login001

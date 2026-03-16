@@ -7,7 +7,7 @@ Resource        ../rf-utilities/DataUtility.robot
 Resource        ../rf-utilities/PropertyUtilities.robot
 Library         ../rf-utilities/ExtentReportListener.py
 Resource        ../rf-utilities/ExtentUtilityListener.robot
-#Library         ../rf-driverutils/AppiumEnhanceLibrary.py
+Library         ../rf-driverutils/AppiumEnhanceLibrary.py
 Library    SeleniumLibrary
 #Library         ../rf-utilities/AbhiTest.py
 Resource        ../Resources/Common.robot
@@ -372,6 +372,22 @@ Click Enabled Element
     # Wait for the element to be enabled (timeout in seconds)
     Wait Until Element Is Enabled    ${EnableElement}    timeout=10
     Click Element    ${EnableElement}
+
+
+Scroll Until Element Is Found
+    [Arguments]    ${locator}    ${max_swipes}=10
+    FOR    ${i}    IN RANGE    ${max_swipes}
+        ${element_found}=    Run Keyword And Ignore Error    AppiumLibrary.Wait Until Page Contains Element    ${locator}    timeout=1s
+        IF    '${element_found}'== 'PASS'
+            Log    Element found!
+            Return
+        END
+        # Swipe down by percentage (adjust coordinates as needed for vertical/horizontal scroll)
+        Swipe By Percent    50    80    50    20    1000
+    END
+    Fail    Element not found after ${max_swipes} swipes
+
+
 
 Scroll Element Into View
     [Documentation]  Wrapper keyword to scroll to given element and click on that element

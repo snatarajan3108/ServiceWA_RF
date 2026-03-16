@@ -255,14 +255,42 @@ Login to the App
     Common.Element Should Be Enabled   ${ReadyToBegin}
     Common.Click Button    ${ReadyToBegin}    ReadyToBegin
 
-    Common.Wait for Element Visibility    ${ContinueWithDigitalID}   ContinueWithDigitalID Button
+    Common.Wait for Element Visibility    ${ContinueWithDigitalID}   ContinueWithDigitalID Link
     Common.Element Should Be Enabled   ${ContinueWithDigitalID}
     Common.Click Button    ${ContinueWithDigitalID}    ContinueWithDigitalID
 
-    Common.Scroll To Given Element   ${SelectMyID}
-     Common.Wait for Element Visibility    ${SelectMyID}   SelectMyID Button
+      Swipe     0    495    0    150
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                    Swipe     0    495    0    150
+
+    Common.Wait for Element Visibility    ${SelectMyID}   SelectMyID Button
     Common.Element Should Be Enabled   ${SelectMyID}
     Common.Click Button    ${SelectMyID}    SelectMyID
+
+    Common.Enter Credentials  ${EnterMyIDEmail} TRANCHETWOABV@TestWapol.com.au
+
+    Common.Wait for Element Visibility    ${GetCode}    SGetCode Button
+    Common.Element Should Be Enabled   ${GetCode}
+    Common.Click Button    ${GetCode}     GetCode
+
+        Swipe     0    495    0    150
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                  Swipe     0    495    0    150
+
+    Common.Wait for Element Visibility    ${Consent}     Consent Button
+    Common.Element Should Be Enabled   ${Consent}
+    Common.Click Button    ${Consent}      Consent
+
+    Swipe     0    495    0    150
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                  Swipe     0    495    0    150
+
+    Common.Wait for Element Visibility    ${SecondConsent}    FinalConsent Button
+    Common.Element Should Be Enabled   ${SecondConsent}
+    Common.Click Button    ${SecondConsent}       FinalConsent
 
 
 

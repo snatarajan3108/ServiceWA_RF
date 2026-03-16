@@ -131,6 +131,15 @@ Wait for Element Visibility
     RETURN   ${STATUS}
 
 
+Enter Username Into App
+    [Arguments]  ${ElementIdentifier}
+    Common.Wait for Element Visibility    ${ElementIdentifier}    UserNameTextbox
+    AppiumLibrary.Input Text   ${ElementIdentifier}  TRANCHETWOABV@TestWapol.com.au
+
+Enter Credentials
+    # Enters the user ID and password into the respective fields
+    Wait Until Page Contains Element    ${USER_ID_FIELD}    timeout=10s    # Wait for the element to be visible
+    Input Text    ${USER_ID_FIELD}    ${USER_ID}
 
 Wait for Element
     [Documentation]    Keyword to Launch Application based on execution location, device type and required capablities
@@ -224,9 +233,9 @@ Enter Text
     [Documentation]    Keyword to click element
     [Arguments]  ${ElementIdentifier}   ${ElementText}  ${ElementDetails}
     IF  "%{EXECUTION_PLATFORM}" == "Mobile"
-#        Wait for Element    ${ElementIdentifier}
-#        AppiumLibrary.Wait Until Page Contains Element  ${ElementIdentifier}
-#        AppiumLibrary.Input Mobile Text       ${ElementIdentifier}   ${ElementText}
+        Wait for Element    ${ElementIdentifier}
+        AppiumLibrary.Wait Until Page Contains Element  ${ElementIdentifier}
+        AppiumLibrary.Input Mobile Text       ${ElementIdentifier}   ${ElementText}
          AppiumLibrary.Input Text       ${ElementIdentifier}   ${ElementText}
     ELSE
 #        Wait for Element    ${ElementIdentifier}
