@@ -85,12 +85,6 @@ ${ios_Discovery}    //XCUIElementTypeStaticText[@name="Discovery"]
 ${ios_Passes}       //XCUIElementTypeStaticText[@name="Passes"]
 ${ios_Inbox}        //XCUIElementTypeStaticText[@name="Inbox"]
 
-
-${WEB_Email}       //input[@type='email']
-${WEB_Password}       //input[@name='Password']
-${WEB_SignIn}       //input[contains(@value,'sign in')]
-${WEB_CurrentTemperature}       //a/p[3]
-
 *** Keywords ***
 Verify page loaded
     IF  "%{EXECUTION_PLATFORM}" == "Mobile"
@@ -284,12 +278,32 @@ Perform logout from Consumer Potal
 
 Set iosServiceWA xpathvalues to variables
     Log To Console    *** overriding the Android keyword values to iOS ***
-    Set Suite Variable      ${GotIt}    ${ios_GotIt}
+       Set Suite Variable   ${GotIt}    ${ios_GotIt}
     Set Suite Variable      ${Done}    ${ios_Done}
     Set Suite Variable      ${Ok}    ${ios_Ok}
     Set Suite Variable      ${AllowPopup}    ${ios_AllowPopup}
     Set Suite Variable      ${Continue}    ${ios_Continue}
     Set Suite Variable      ${GoToSettings}    ${ios_GoToSettings}
+    Set Suite Variable      ${LoginToServiceWA}    ${ios_LoginToServiceWA}
+    Set Suite Variable      ${IAgree}    ${ios_IAgree}
+    Set Suite Variable      ${NextLoginCreateDigitalID}    ${ios_NextLoginCreateDigitalID}
+    Set Suite Variable      ${ReadyToBegin}    ${ios_ReadyToBegin}
+    Set Suite Variable      ${ContinueWithDigitalID}    ${ios_ContinueWithDigitalID}
+    Set Suite Variable      ${SkipSetup}    ${ios_SkipSetup}
+    Set Suite Variable      ${myID}    ${ios_myID}
+    Set Suite Variable      ${SelectMyID}    ${ios_SelectMyID}
+    Set Suite Variable      ${EnterMyIDEmail}    ${ios_EnterMyIDEmail}
+    Set Suite Variable      ${GetCode}    ${ios_GetCode}
+    Set Suite Variable      ${Consent}    ${ios_Consent}
+    Set Suite Variable      ${SecondConsent}    ${ios_Consent}
+    Set Suite Variable      ${SkipForNow}    ${ios_SkipForNow}
+    Set Suite Variable      ${YesSkip}    ${ios_YesSkip}
+    Set Suite Variable      ${LogOut}    ${ios_LogOut}
+    Set Suite Variable      ${Close}    ${ios_Close}
+    Set Suite Variable      ${Home}    ${ios_Home}
+    Set Suite Variable      ${Discovery}    ${ios_Discovery}
+    Set Suite Variable      ${Passes}    ${ios_Passes}
+    Set Suite Variable      ${Inbox}    ${ios_Inbox}
 
 
 
