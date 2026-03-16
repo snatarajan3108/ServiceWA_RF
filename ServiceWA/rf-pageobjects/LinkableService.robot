@@ -10,8 +10,6 @@ Resource  ../rf-driverutils/AppiumCommon.robot
 
 *** Variables ***
 #Android
-
-
 ${LinkableServices}    ///android.view.View[@content-desc="Linkable services"]
 ${FishCatchWA}        //android.view.View[@content-desc="FishCatchWA"]
 ${Next}    //android.widget.Button[@content-desc="Next"]
@@ -19,21 +17,14 @@ ${IAgree}    //android.widget.Button[@content-desc="I Agree"]
 ${BackToServiceWA}    //android.widget.ImageView[@content-desc="ServiceWA"]
 ${Linked}    //android.view.View[@content-desc="Linked"]
 
-
 #IOS
+${ios_LinkableServices}    //XCUIElementTypeStaticText[@name="Linkable services"]
+${ios_FishCatchWA}        //XCUIElementTypeOther[@name="FishCatchWA"]
 ${ios_Next}    //XCUIElementTypeButton[@name="Next"]
 ${ios_IAgree}    //XCUIElementTypeButton[@name="I Agree"]
-${ios_BackToServiceWA}    //XCUIElementTypeImage[@name="ServiceWA"]
-${ios_FishCatchWA}        //XCUIElementTypeOther[@name="FishCatchWA"]
-${ios_LinkableServices}    //XCUIElementTypeStaticText[@name="Linkable services"]
+#${ios_BackToServiceWA}    //XCUIElementTypeImage[@name="ServiceWA"]
+${ios_BackToServiceWA}    //XCUIElementTypeImage[@name="ServiceWA"]//XCUIElementTypeImage[@name="ServiceWA"]
 ${ios_Linked}    //XCUIElementTypeStaticText[@name="Linked"]
-
-#${Next}    //XCUIElementTypeButton[@name="Next"]
-#${IAgree}    //XCUIElementTypeButton[@name="I Agree"]
-#${BackToServiceWA}    //XCUIElementTypeImage[@name="ServiceWA"]
-#${FishCatchWA}        //XCUIElementTypeOther[@name="FishCatchWA"]
-#${LinkableServices}    //XCUIElementTypeStaticText[@name="Linkable services"]
-#${Linked}    //XCUIElementTypeStaticText[@name="Linked"]
 
 *** Keywords ***
 Link to the FishCatchWA
@@ -49,13 +40,13 @@ Link to the FishCatchWA
 #
 #    Log        Context: ${context}
 #    Log        Status : ${STATUS}
-#
-#    Log to console      Device OS : %{Device OS}
-#    IF  "%{Device OS}" == "iOS"
-#        Set iosLinkServiceWA xpathvalues to variables
-#    ELSE
-#        Log To Console    Executing in Android
-#    END
+
+    Log to console      Device OS : %{Device OS}
+    IF  "%{Device OS}" == "iOS"
+        Set iosLinkServiceWA xpathvalues to variables
+    ELSE
+        Log To Console    Executing in Android
+    END
     Swipe     0    495    0    150
      Common.Wait for Element Visibility    ${LinkableServices}   LinkableServices Button
      Common.Click Button    ${LinkableServices}    LinkableServices
@@ -68,13 +59,21 @@ Link to the FishCatchWA
     Common.Wait for Element Visibility    ${Next}   Next Button
     Common.Click Button    ${Next}    Next
 
-    AppiumCommon.Swipe up screen Range     ${IAgree}
-    Common.Wait for Element Visibility    ${IAgree}   IAgree Button
+        Swipe     0    495    0    150
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                    Swipe     0    495    0    150
+
+#    AppiumCommon.Swipe up screen Range     ${IAgree}
+     Common.Wait for Element Visibility    ${IAgree}   IAgree Button
      Common.Element Should Be Enabled   ${IAgree}
      Common.Click Button    ${IAgree}    IAgree
+     
 
-     Common.Wait for Element Visibility    ${BackToServiceWA}   BackToServiceWA Button
-     Common.Click Element With Details   ${BackToServiceWA}    BackToServiceWA
+    Common.Wait for Element Visibility    ${BackToServiceWA}   BackToServiceWA Button
+    Common.Element Should Be Enabled   ${BackToServiceWA}
+    Common.Scroll To Given Element  ${BackToServiceWA}
+    Common.Click Element     ${BackToServiceWA}
 
      AppiumLibrary.Element Should Be Visible  ${FishCatchWA}
      Common.Wait for Element Visibility    ${FishCatchWA}
@@ -84,8 +83,21 @@ Link to the FishCatchWA
      Element Name Should Be    ${Linked}   expected=Linked
 
 
-    
-    
+#     Common.Wait for Element Visibility    ${FishCatchWA}   FishCatchWA Button
+#    ${FishCatchWA_Visible} =   Run Keyword And Return Status  AppiumLibrary.Element Should Be Visible    ${FishCatchWA}
+#    Log        FishCatchWA Button Visibility : ${FishCatchWA_Visible}
+#    Common.Click Button    ${FishCatchWA}    FishCatchWAButton
+
+
+##    Common.Click And Verify Element  ${BackToServiceWA}     ${FishCatchWA}
+##    Common.Click Mobile Element    ${BackToServiceWA}
+##    AppiumCommon.Click Mobile Element      ${BackToServiceWA}
+#     Common.Wait for Element Visibility    ${BackToServiceWA}   BackToServiceWA Button
+###   Common.Click Element With Details   ${BackToServiceWA}    BackToServiceWA
+#     Common.Element Should Be Enabled   ${BackToServiceWA}
+#     Common.Click Element     ${BackToServiceWA}
+     
+
 
 Set iosLinkServiceWA xpathvalues to variables
     Log To Console    *** overriding the Android keyword values to iOS ***

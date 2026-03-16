@@ -29,7 +29,7 @@ Stability_TC_01_Mobile validate_ Linkable service FishCatchWA
         # Common.Launch Application    $File Path    $Sheet Name    $App Name
         Log      Launching Application
         Common.Launch Application     MobileConfig.xlsx   AppiumConfig  ${prop.App_URL}
-        SignInScreen.Before login to App    username@servicewa.com    myPassword
+        SignInScreen.Before login to App    #username@servicewa.com    myPassword
         LinkableService.Link To The FishCatchWA
 
 

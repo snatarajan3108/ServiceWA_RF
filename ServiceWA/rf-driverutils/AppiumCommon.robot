@@ -402,8 +402,10 @@ Refresh The Current Screen
 
 Swipe up screen Range
     [Arguments]     ${SwipElement}
-       FOR       ${counter}  IN RANGE    1 10
-     ${Isvisible}=    Common.Element Should Be Enabled   ${SwipElement}
+       FOR       ${counter}  IN RANGE    1    10
+     ${Isvisible}=    Run Keyword And Return Status    Common.Element Should Be Enabled    ${SwipElement}
+     log     ${Isvisible}
+#     ${Isvisible}=    Common.Element Should Be Enabled   ${SwipElement}
          IF       '${Isvisible}' ==     'True'
                     AppiumCommon.Swipe Up Screen
          Exit For Loop

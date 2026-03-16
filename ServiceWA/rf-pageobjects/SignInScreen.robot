@@ -8,8 +8,6 @@ Resource    ../Resources/Common.robot
 #Resource    ../rf-pageobjects/HomeScreen.robot
 Resource  ../rf-driverutils/AppiumCommon.robot
 
-
-
 *** Variables ***
 # Android
 
@@ -46,12 +44,7 @@ ${Discovery}    //android.view.View[@content-desc="Discovery"]
 ${Passes}       //android.view.View[@content-desc="Passes"]
 ${Inbox}        //android.view.View[@content-desc="Inbox"]
 
-
-
-
-
 #${Inbox}    accessibility id=Inbox
-
 
 # ios
 ${ios_GotIt}        //XCUIElementTypeButton[@name="Got it"]
@@ -219,31 +212,29 @@ Login to the App
 
      [Documentation]    link the FishCatchWA Mobile Application through Discovery
      [Arguments]    ${User Name}    ${Password}
-
-    Log        Inside ~ Login to the App
-    Sleep    10    Wait for all context to be available
-    ${contexts}    Get Contexts
-    Log        Contexts:-${contexts}
-    ${context}      Get Current Context
-    ${STATUS}       Evaluate   "WEBVIEW" in """${context}"""
-
-    Log        Context: ${context}
-    Log        Status : ${STATUS}
-
-    Log to console      Device OS : %{Device OS}
-    IF  "%{Device OS}" == "iOS"
-        Set iosLinkServiceWA xpathvalues to variables
-    ELSE
-        Log To Console    Executing in Android
-    END
-    Swipe     0    495    0    150
+#
+#    Log        Inside ~ Login to the App
+#    Sleep    10    Wait for all context to be available
+#    ${contexts}    Get Contexts
+#    Log        Contexts:-${contexts}
+#    ${context}      Get Current Context
+#    ${STATUS}       Evaluate   "WEBVIEW" in """${context}"""
+#
+#    Log        Context: ${context}
+#    Log        Status : ${STATUS}
+#
+#    Log to console      Device OS : %{Device OS}
+#    IF  "%{Device OS}" == "iOS"
+#        Set iosServiceWA xpathvalues to variables
+#    ELSE
+#        Log To Console    Executing in Android
+#    END
+#    Swipe     0    495    0    150
     Scroll To Given Element  ${GoToSettings}
     Common.Wait for Element Visibility    ${GoToSettings}   Settings Icon
     Common.Click Button    ${GoToSettings}    GoToSettings
-    Common.Wait for Element Visibility    ${GoToSettings}   Settings Icon
-    Common.Click Button    ${GoToSettings}    GoToSettings
-    
-
+    Common.Wait for Element Visibility    ${LoginToServiceWA}   LoginToServiceWA Button
+    Common.Click Button    ${LoginToServiceWA}    LoginToServiceWA
 
 
 

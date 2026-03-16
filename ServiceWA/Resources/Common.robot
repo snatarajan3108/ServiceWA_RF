@@ -44,6 +44,7 @@ Click Mobile Element
     [Arguments]    ${Element}
     Wait for Element    ${Element}
     AppiumLibrary.Wait Until Element Is Visible    ${Element}
+    log     ${Element}
     Element Should Be Enabled    ${Element}
     Wait Until Keyword Succeeds    ${RETRY COUNT}    ${RETRY WAIT}    Click Element    ${Element}
 
@@ -332,3 +333,11 @@ Click And Verify No Redirection
     Wait Until Keyword Succeeds    3x    2s    Click Element    ${locator}
     # Verify we are still on the same page
     Element Should Be Visible    ${expected_page_id}    # No redirection occurred
+
+Click And Verify Element
+    [Arguments]    ${locator}    ${verification_locator}
+    AppiumLibrary.Wait Until Element Is Visible  ${locator}  timeout=10s
+    Wait Until Element Is Enabled  ${locator}  timeout=10s
+    Click Element  ${locator}
+    Wait Until Element Is Visible  ${verification_locator}  timeout=10s
+    # You could also use "Element Should Be Visible" if you are confident it will appear immediately after the wait
