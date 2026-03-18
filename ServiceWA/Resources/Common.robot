@@ -137,9 +137,10 @@ Enter Username Into App
     AppiumLibrary.Input Text   ${ElementIdentifier}  TRANCHETWOABV@TestWapol.com.au
 
 Enter Credentials
-    # Enters the user ID and password into the respective fields
+     [Arguments]  ${USER_ID_FIELD}      # Enters the user ID and password into the respective fields
     Wait Until Page Contains Element    ${USER_ID_FIELD}    timeout=10s    # Wait for the element to be visible
-    Input Text    ${USER_ID_FIELD}    ${USER_ID}
+    Input Text    ${USER_ID_FIELD}
+
 
 Wait for Element
     [Documentation]    Keyword to Launch Application based on execution location, device type and required capablities
@@ -235,7 +236,7 @@ Enter Text
     IF  "%{EXECUTION_PLATFORM}" == "Mobile"
         Wait for Element    ${ElementIdentifier}
         AppiumLibrary.Wait Until Page Contains Element  ${ElementIdentifier}
-        AppiumLibrary.Input Mobile Text       ${ElementIdentifier}   ${ElementText}
+#        AppiumLibrary.Input Mobile Text       ${ElementIdentifier}   ${ElementText}
          AppiumLibrary.Input Text       ${ElementIdentifier}   ${ElementText}
     ELSE
 #        Wait for Element    ${ElementIdentifier}

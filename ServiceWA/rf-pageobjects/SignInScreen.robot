@@ -65,7 +65,9 @@ ${ios_SkipSetup}        //XCUIElementTypeButton[@name="Skip for now"]
 ${ios_myID}        //XCUIElementTypeStaticText[@name="myID"]
 #${ios_RememberMyChoice}        (//XCUIElementTypeSwitch[@name="Remember my choice (Not recommended for shared devices)"])[2]
 ${ios_SelectMyID}        //XCUIElementTypeButton[@name="Select myID"]
-${ios_EnterMyIDEmail}        //XCUIElementTypeTextField[@name="myID email"]
+#${ios_EnterMyIDEmail}       //XCUIElementTypeTextField
+${ios_EnterMyIDEmail}    //XCUIElementTypeTextField[@name="myID email"]
+#//XCUIElementTypeTextField[@name="myID email"]
 ${ios_GetCode}        //XCUIElementTypeButton[@name="Get code"]
 ${ios_VerifyEmail}        //XCUIElementTypeStaticText[@name="Email"]
 ${ios_Consent}        //XCUIElementTypeButton[@name="Consent"]
@@ -257,7 +259,9 @@ Login to the App
 
     Common.Wait for Element Visibility    ${ContinueWithDigitalID}   ContinueWithDigitalID Link
     Common.Element Should Be Enabled   ${ContinueWithDigitalID}
-    Common.Click Button    ${ContinueWithDigitalID}    ContinueWithDigitalID
+#    Common.Click Button    ${ContinueWithDigitalID}    ContinueWithDigitalID
+     Common.Click Mobile Element   ${ContinueWithDigitalID}
+
 
       Swipe     0    495    0    150
             Swipe     0    495    0    150
@@ -268,7 +272,17 @@ Login to the App
     Common.Element Should Be Enabled   ${SelectMyID}
     Common.Click Button    ${SelectMyID}    SelectMyID
 
-    Common.Enter Credentials  ${EnterMyIDEmail} TRANCHETWOABV@TestWapol.com.au
+#     Wait Until Page Contains Element    ${EnterMyIDEmail}
+#     Common.Element Should Be Enabled   ${EnterMyIDEmail}
+#     Input Text    ${EnterMyIDEmail}     TRANCHETWOABV@TestWapol.com.au
+     
+#     Common.Enter Text     ${EnterMyIDEmail}  TRANCHETWOABV@TestWapol.com.au  EmailID
+    Sleep    10s
+    
+     AppiumCommon.Wait for Element Present    ${EnterMyIDEmail}
+     AppiumLibrary.Input Text     ${EnterMyIDEmail}   TRANCHETWOABV@TestWapol.com.au
+#     AppiumLibrary.Input Text    id=0A000000-0000-0000-A905-000000000000    TRANCHETWOABV@TestWapol.com.au
+
 
     Common.Wait for Element Visibility    ${GetCode}    SGetCode Button
     Common.Element Should Be Enabled   ${GetCode}

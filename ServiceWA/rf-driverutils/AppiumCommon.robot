@@ -103,7 +103,7 @@ Launch Mobile Application on BrowserStack
 
     Run Keyword If    "%{MOBILE_VIEW}" == "NA" and "${OS}" == "iOS" and "${Port}" == "0000"        Open Application    ${URL}    platformName=${OS}    platformVersion=${OS Version}    deviceName=${Device}    app=${App Path}    autoDismissAlerts=true    orientation=${orientation}    name=${TEST NAME}  cacheId=${Device}  newCommandTimeout=180
 #    Run Keyword If    "%{MOBILE_VIEW}" == "NA" and "${OS}" == "Android" and "${Port}" == "0000"    Open Application    ${URL}    platformName=${OS}    platformVersion=${OS Version}    deviceName=${Device}    app=${App Path}    autoGrantPermissions=true     name=${TEST NAME}  cacheId=${Device}     newCommandTimeout=180   orientation=${orientation}
-    Run Keyword If    "%{MOBILE_VIEW}" == "NA" and "${OS}" == "Android" and "${Port}" == "0000"    Open Application    ${REMOTE_URL}    app=${App Path}   name=${TEST NAME}    build=RobotFramework    platformName=${OS}    os_version=${OS Version}    deviceName=${Device}   autoGrantPermissions=false   autoDismissAlerts=true   interactiveDebugging=true
+    Run Keyword If    "%{MOBILE_VIEW}" == "NA" and "${OS}" == "Android" and "${Port}" == "0000"    Open Application    ${REMOTE_URL}    app=${App Path}   name=${TEST NAME}    build=RobotFramework    platformName=${OS}    os_version=${OS Version}    deviceName=${Device}   autoGrantPermissions=false    autoDismissAlerts=true     interactiveDebugging=true
 
     Log To Console  Launched Mobile App
 
@@ -219,6 +219,13 @@ Convert Currency To Number
     ${Number Value}    Remove String    ${Currency Value}    $    ,    ${SPACE}
     ${Number Value}    Convert To Number    ${Number Value}
     RETURN    ${Number Value}
+    
+    
+Click the Image
+    [Arguments]    ${ImageClick}
+    ${Location} = Get Element Location  ${ImageClick}
+    AppiumLibrary.Click Element At Coordinates ${Location['X']}   ${Location['Y']}
+    
 
 Click Mobile Element
     [Documentation]    Wrapper Keyword for Click Element with Retry included
@@ -319,7 +326,7 @@ Verify Element Change
 Wait For Element Present
     [Documentation]    Wrapper Keyword for to validate the given element is present
     [Arguments]    ${Element}
-    Validate Document Ready State
+#    Validate Document Ready State
     AppiumLibrary.Wait Until Page Contains Element    ${Element}
     AppiumLibrary.Wait Until Element Is Visible    ${Element}
     ${STATUS}=     Run Keyword And Return Status    AppiumLibrary.Element Should Be Enabled    ${Element}
