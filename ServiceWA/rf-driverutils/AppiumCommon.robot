@@ -700,7 +700,7 @@ Write Pass Results
         Log to console      PASSED: ${Description}
         Write Extent Test Steps         ${Description}      Pass        True
 
-
+#Sundar Method
 Click OK If Present
     [Arguments]    ${ok_locator}    ${next_locator}    ${timeout}=2s
     ${is_visible}=    Run Keyword And Return Status  Wait Until Element Is Visible    ${ok_locator}    ${timeout}
@@ -714,3 +714,8 @@ Click OK If Present
      Common.Click Button    ${next_locator}    Continue
 
     END
+    
+Scroll To Element
+        [Arguments]    ${ScrollElement}
+        Swipe Until Element is Visible  ${ScrollElement} direction=down max_swipes=5
+        ${is_visible}=    Run Keyword And Return Status  Wait Until Element Is Visible    ${ScrollElement}

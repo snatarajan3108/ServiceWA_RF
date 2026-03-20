@@ -39,6 +39,7 @@ ${SkipForNow}        //android.widget.Button[@content-desc="Skip for now"]
 ${YesSkip}        //android.widget.Button[@content-desc="Yes, skip"]
 ${LogOut}        //android.widget.Button[@content-desc="Log out"]
 ${Close}        //android.widget.Button[@content-desc="Close"]
+${Confirm}        //android.view.View[@content-desc="Inbox"]
 ${Home}        //android.view.View[@content-desc="Home"]
 ${Discovery}    //android.view.View[@content-desc="Discovery"]
 ${Passes}       //android.view.View[@content-desc="Passes"]
@@ -75,11 +76,13 @@ ${ios_Consent}        //XCUIElementTypeButton[@name="Consent"]
 ${ios_SkipForNow}        //XCUIElementTypeButton[@name="Skip for now"]
 ${ios_YesSkip}        //XCUIElementTypeButton[@name="Yes, skip"]
 ${ios_LogOut}        //XCUIElementTypeButton[@name="Log out"]
+${ios_Confirm}    //XCUIElementTypeButton[@name="Confirm"]
 ${ios_Close}        //XCUIElementTypeButton[@name="Close"]
 ${ios_Home}        //XCUIElementTypeStaticText[@name="Home"]
 ${ios_Discovery}    //XCUIElementTypeStaticText[@name="Discovery"]
 ${ios_Passes}       //XCUIElementTypeStaticText[@name="Passes"]
 ${ios_Inbox}        //XCUIElementTypeStaticText[@name="Inbox"]
+
 
 *** Keywords ***
 Verify page loaded
@@ -131,6 +134,8 @@ Before login to App
     ELSE
         Log To Console    Executing in Android
     END
+
+    Common.Scroll To Given Element    ${GotIt}
     Common.Wait for Element Visibility    ${GotIt}   GotIt Button
     ${GotItButton_Visible} =   Run Keyword And Return Status  AppiumLibrary.Element Should Be Visible    ${GotIt}
     Log        GotIt Button Visibility : ${GotItButton_Visible}
@@ -155,7 +160,7 @@ Before login to App
 Login to the App
 
      [Documentation]    link the FishCatchWA Mobile Application through Discovery
-     [Arguments]    ${User Name}    ${Password}
+#     [Arguments]    ${User Name}    ${Password}
 #
 #    Log        Inside ~ Login to the App
 #    Sleep    10    Wait for all context to be available
@@ -263,9 +268,9 @@ Login to the App
     Common.Wait for Element Visibility    ${LogOut}    LogOut Button
     Log to Console  Logout Element is present ${LogOut}
 
-    Common.Wait for Element Visibility    ${Close}    Close Button
-    Common.Element Should Be Enabled   ${Close}
-    Common.Click Button    ${Close}       Close
+#    Common.Wait for Element Visibility    ${Close}    Close Button
+#    Common.Element Should Be Enabled   ${Close}
+#    Common.Click Button    ${Close}       Close
 
 Check Element Locators to be use
     Log to console      Device OS : %{Device OS}
@@ -298,7 +303,7 @@ Perform logout from Consumer Potal
 
 Set iosServiceWA xpathvalues to variables
     Log To Console    *** overriding the Android keyword values to iOS ***
-       Set Suite Variable   ${GotIt}    ${ios_GotIt}
+    Set Suite Variable   ${GotIt}    ${ios_GotIt}
     Set Suite Variable      ${Done}    ${ios_Done}
     Set Suite Variable      ${Ok}    ${ios_Ok}
     Set Suite Variable      ${AllowPopup}    ${ios_AllowPopup}
@@ -324,6 +329,8 @@ Set iosServiceWA xpathvalues to variables
     Set Suite Variable      ${Discovery}    ${ios_Discovery}
     Set Suite Variable      ${Passes}    ${ios_Passes}
     Set Suite Variable      ${Inbox}    ${ios_Inbox}
+    Set Suite Variable      ${Confirm}    ${ios_Confirm}
+
 
 
 

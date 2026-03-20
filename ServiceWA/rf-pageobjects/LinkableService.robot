@@ -69,10 +69,11 @@ Link to the FishCatchWA
      Common.Element Should Be Enabled   ${IAgree}
      Common.Click Button    ${IAgree}    IAgree
      
-
-    Common.Wait for Element Visibility    ${BackToServiceWA}   BackToServiceWA Button
+    Sleep    10s
+    AppiumCommon.Wait for Element Present    ${BackToServiceWA}
+#    Common.Wait for Element Visibility    ${BackToServiceWA}   BackToServiceWA Button
     Common.Element Should Be Enabled   ${BackToServiceWA}
-    Common.Scroll To Given Element  ${BackToServiceWA}
+#    Common.Scroll To Given Element  ${BackToServiceWA}
     Common.Click Element     ${BackToServiceWA}
 
      AppiumLibrary.Element Should Be Visible  ${FishCatchWA}
