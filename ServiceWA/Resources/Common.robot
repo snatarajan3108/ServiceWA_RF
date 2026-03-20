@@ -348,7 +348,13 @@ Click And Verify No Redirection
 Click And Verify Element
     [Arguments]    ${locator}    ${verification_locator}
     AppiumLibrary.Wait Until Element Is Visible  ${locator}  timeout=10s
-    Wait Until Element Is Enabled  ${locator}  timeout=10s
+    Common.Element Should Be Enabled  ${locator}  timeout=10s
     Click Element  ${locator}
+    Wait Until Element Is Visible  ${verification_locator}  timeout=10s
+    # You could also use "Element Should Be Visible" if you are confident it will appear immediately after the wait
+
+Verify Element
+    [Arguments]    ${locator}    ${verification_locator}
+    AppiumLibrary.Wait Until Element Is Visible  ${locator}  timeout=10s
     Wait Until Element Is Visible  ${verification_locator}  timeout=10s
     # You could also use "Element Should Be Visible" if you are confident it will appear immediately after the wait

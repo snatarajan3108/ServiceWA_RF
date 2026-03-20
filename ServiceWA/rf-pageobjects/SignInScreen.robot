@@ -65,8 +65,9 @@ ${ios_SkipSetup}        //XCUIElementTypeButton[@name="Skip for now"]
 ${ios_myID}        //XCUIElementTypeStaticText[@name="myID"]
 #${ios_RememberMyChoice}        (//XCUIElementTypeSwitch[@name="Remember my choice (Not recommended for shared devices)"])[2]
 ${ios_SelectMyID}        //XCUIElementTypeButton[@name="Select myID"]
-#${ios_EnterMyIDEmail}       //XCUIElementTypeTextField
-${ios_EnterMyIDEmail}    //XCUIElementTypeTextField[@name="myID email"]
+${ios_EnterMyIDEmail}       //XCUIElementTypeTextField
+#${ios_EnterMyIDEmail}    //XCUIElementTypeTextField[@name="myID email"]
+#${ios_EnterMyIDEmail}    //XCUIElementTypeTextField[@label=""]
 #//XCUIElementTypeTextField[@name="myID email"]
 ${ios_GetCode}        //XCUIElementTypeButton[@name="Get code"]
 ${ios_VerifyEmail}        //XCUIElementTypeStaticText[@name="Email"]
@@ -160,56 +161,6 @@ Before login to App
 #        Common.Wait for Element Visibility    ${Ok}   Ok Button
 #        Common.Click Button    ${Ok}    Ok
 #    END
-
-    
-#    Sleep   10s
-#
-#    AppiumCommon.Show Contexts
-#    Scroll To Given Element  ${Continue}
-#    Common.Wait for Element Visibility    ${Continue}   Continue Button
-#    Common.Click Button    ${Continue}    Continue
-#
-#    Sleep   10s
-
-
-#
-#    FOR    ${i}    IN RANGE    1    4
-#        ${popupVisible}=    Run Keyword And Return Status
-#        ...    Wait Until Element Is Visible    ${AllowPopup}    10s
-#        Log to Console        PopupVisibile: ${popupVisible}
-#        Run Keyword If    ${popupVisible}    Click Element    ${AllowPopup}
-#        Exit For Loop If    not ${popupVisible}
-#    END
-
-#    AppiumLibrary.Wait Until Element Is Visible    ${AllowPopup}    20s
-#    Common.Wait for Element Visibility    ${AllowPopup}   Allow Popup
-#    Common.Click Button    ${AllowPopup}    AllowPopup
-#
-
-
-##
-#    Scroll To Given Element  ${GoToSettings}
-#    Common.Wait for Element Visibility    ${GoToSettings}   Settings Icon
-#    Common.Click Button    ${GoToSettings}    GoToSettings
-#
-#    Common.Wait for Element Visibility    ${LoginToServiceWA}   LoginToServiceWA Button
-#    Common.Click Button    ${LoginToServiceWA}    LoginToServiceWA
-#
-#    Scroll Element Into View And Click        ${Agree}
-#    Common.Wait for Element Visibility    ${Agree}   Agree Button
-#    Common.Click Button    ${Agree}    AgreeButton
-#
-#    Common.Wait for Element Visibility    ${NextLoginCreateDigitalID}   Next Button
-#    Common.Click Button    ${NextLoginCreateDigitalID}    NextLoginCreateDigitalID
-#
-#    Common.Wait for Element Visibility    ${ReadyToBegin}   ReadyToBegin Button
-#    Common.Click Button    ${ReadyToBegin}    ReadyToBegin
-
-    
-#    AppiumCommon.Show Contexts
-
-#    Log to console  UserName:${User Name}, Password:${Password}
-
 Login to the App
 
      [Documentation]    link the FishCatchWA Mobile Application through Discovery
@@ -277,12 +228,12 @@ Login to the App
 #     Input Text    ${EnterMyIDEmail}     TRANCHETWOABV@TestWapol.com.au
      
 #     Common.Enter Text     ${EnterMyIDEmail}  TRANCHETWOABV@TestWapol.com.au  EmailID
-    Sleep    10s
-    
+     Sleep    10s
      AppiumCommon.Wait for Element Present    ${EnterMyIDEmail}
+     Common.Click Element    ${EnterMyIDEmail}
      AppiumLibrary.Input Text     ${EnterMyIDEmail}   TRANCHETWOABV@TestWapol.com.au
+     log     ${EnterMyIDEmail}
 #     AppiumLibrary.Input Text    id=0A000000-0000-0000-A905-000000000000    TRANCHETWOABV@TestWapol.com.au
-
 
     Common.Wait for Element Visibility    ${GetCode}    SGetCode Button
     Common.Element Should Be Enabled   ${GetCode}
@@ -306,8 +257,20 @@ Login to the App
     Common.Element Should Be Enabled   ${SecondConsent}
     Common.Click Button    ${SecondConsent}       FinalConsent
 
+    Common.Wait for Element Visibility    ${Done}    Done Button
+    Common.Element Should Be Enabled   ${Done}
+    Common.Click Button    ${Done}       Done
 
+    Common.Wait for Element Visibility    ${SkipForNow}    SkipForNow Button
+    Common.Element Should Be Enabled   ${SkipForNow}
+    Common.Click Button    ${SkipForNow}       SkipForNow
 
+    Common.Wait for Element Visibility    ${YesSkip}    YesSkip Button
+    Common.Element Should Be Enabled   ${YesSkip}
+    Common.Click Button    ${YesSkip}       YesSkip
+
+    Common.Wait for Element Visibility    ${LogOut}    LogOut Button
+    log     ${LogOut}
 
 
 
