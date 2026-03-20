@@ -699,3 +699,18 @@ Write Pass Results
     [Arguments]     ${Description}
         Log to console      PASSED: ${Description}
         Write Extent Test Steps         ${Description}      Pass        True
+
+
+Click OK If Present
+    [Arguments]    ${ok_locator}    ${next_locator}    ${timeout}=2s
+    ${is_visible}=    Run Keyword And Return Status  Wait Until Element Is Visible    ${ok_locator}    ${timeout}
+    IF    ${is_visible}
+        Common.Click Element    ${ok_locator}
+        Log    OK button was present - clicked
+        
+    ELSE
+     Common.Wait for Element Visibility    ${next_locator}   Continue Button
+     Swipe     0    495    0    150
+     Common.Click Button    ${next_locator}    Continue
+
+    END

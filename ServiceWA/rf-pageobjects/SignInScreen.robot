@@ -138,21 +138,12 @@ Before login to App
 
     Common.Wait for Element Visibility    ${Done}   Done Button
     Common.Click Button    ${Done}    Done
+    
+    AppiumCommon.Click OK If Present     ${Ok}    ${Continue}    timeout=2s
 
-     Common.Wait for Element Visibility    ${Continue}   Continue Button
-     Swipe     0    495    0    150
-     Common.Click Button    ${Continue}    Continue
-
-#     Common.Wait for Element Visibility    ${GoToSettings}   GoToSettings Button
-#     Common.Click Button    ${GoToSettings}    GoToSettings
-
-#    Common.Wait for Element Visibility    ${Ok}   Ok Button
-#    Common.Click Button    ${Ok}    Ok
-
-#    Common.Wait for Element Visibility    ${AllowPopup}   AllowPopup Button
-#    Common.Click Button    ${AllowPopup}    AllowPopup
-
-
+#     Common.Wait for Element Visibility    ${Continue}   Continue Button
+#     Swipe     0    495    0    150
+#     Common.Click Button    ${Continue}    Continue
 
 #    IF  "%{Device OS}" == "Android"
 #        Common.Wait for Element Visibility    ${Ok}   Ok Button
@@ -270,9 +261,11 @@ Login to the App
     Common.Click Button    ${YesSkip}       YesSkip
 
     Common.Wait for Element Visibility    ${LogOut}    LogOut Button
-    log     ${LogOut}
+    Log to Console  Logout Element is present ${LogOut}
 
-
+    Common.Wait for Element Visibility    ${Close}    Close Button
+    Common.Element Should Be Enabled   ${Close}
+    Common.Click Button    ${Close}       Close
 
 Check Element Locators to be use
     Log to console      Device OS : %{Device OS}

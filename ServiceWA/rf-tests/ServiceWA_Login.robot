@@ -16,7 +16,7 @@ Suite Teardown  Common.Close Application
 #*** Variables ***
 #
 *** Test Cases ***
-
+#
 #Stability_TC_01_Mobile Before login Steps
 #        Log to Console  *************************************** User to perform Login & logout from  Mobile app ***************************************
 #        [Tags]  Login001       Smoke      Regression
@@ -30,14 +30,14 @@ Suite Teardown  Common.Close Application
 #        # Common.Launch Application    $File Path    $Sheet Name    $App Name
 #        Log      Launching Application
 #        Common.Launch Application     MobileConfig.xlsx   AppiumConfig  ${prop.App_URL}
-#        SignInScreen.Before login to App    #username@servicewa.com    myPassword
+#        SignInScreen.Before login to App
 
 Stability_TC_02_Mobile Validation of login
         Log to Console  *************************************** User to perform Login & logout from  Mobile app ***************************************
         [Tags]  Login002       Smoke      Regression
          &{prop}=    Load Config Properties Data
-         &{TestData}=   Load Test Data From File   TestData.xlsx   ServiceWA  Login001
-        log to console      Login001
+         &{TestData}=   Load Test Data From File   TestData.xlsx   ServiceWA  Login002
+        log to console      Login002
         Set Environment Variable            TCID                    ${TestData.TestcaseID}
         #Skip If    "${TestData.Execute}" != "Y"    Test Not Selected for Execution
         Extent TestCaseHeader                 ${TEST NAME}        ${TestData.TestcaseID}          ServiceWA Application
@@ -47,23 +47,3 @@ Stability_TC_02_Mobile Validation of login
         Common.Launch Application     MobileConfig.xlsx   AppiumConfig  ${prop.App_URL}
         SignInScreen.Before login to App
         SignInScreen.Login to the App    username@servicewa.com    myPassword
-
-
-
-#Stability_TC_02_Mobile App_Validation of login and logout
-#
-#        Log to Console  *************************************** User to perform Login & logout from  Mobile app ***************************************
-#        [Tags]  Login001       Smoke      Regression
-#         &{prop}=    Load Config Properties Data
-#         &{TestData}=   Load Test Data From File   TestData.xlsx   ServiceWA  Login001
-#        log to console      Login001
-#        Set Environment Variable            TCID                    ${TestData.TestcaseID}
-#        #Skip If    "${TestData.Execute}" != "Y"    Test Not Selected for Execution
-#        Extent TestCaseHeader                 ${TEST NAME}        ${TestData.TestcaseID}          iComfort Application
-#        Log   DeviceName-> %{DEVICE_NAME}
-#        # Common.Launch Application    $File Path    $Sheet Name    $App Name
-#        Log      Launching Application
-#        Common.Launch Application     MobileConfig.xlsx   AppiumConfig  ${prop.App_URL}
-##       SignInScreen.Set ios xpathvalues to variables
-##        SignInScreen.Login to the App    username@servicewa.com    myPassword
-
