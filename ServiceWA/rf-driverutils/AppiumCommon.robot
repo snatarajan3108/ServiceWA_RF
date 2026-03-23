@@ -122,22 +122,6 @@ Launch Mobile Application on BrowserStack
     Log        Context: ${context}
     Log        Status : ${STATUS}
 
-
-
-Launch Browser Test
-    [Documentation]    Wrapper keyword to Launch Chrome Browser in Developer Mode
-     [Arguments]  ${File Path}   ${Sheet Name}
-#    [Arguments]    ${Msg}               ${Flag}=False
-#    InitialSetup
-    Log To Console    Launching Chrome Browser in Developer Mode
-#    Open Browser  %{APP_URL}  %{BROWSER_TYPE}  options=add_argument("--ignore-certificate-errors")
-#    Log To console  Enabling View
-#    Open Browser    %{APP_URL}   browser=chrome  desired_capabilities=${desired_capabilities}
-    Open Browser  https://liidaveqa.com  Chrome  options=add_argument("--ignore-certificate-errors")
-    Maximize Browser Window
-    Log to console  Maximized the Browser
-    Sleep   10s
-
 Show Contexts
     [Documentation]    Print the Contexts
     Sleep    10    Wait for all context to be available
@@ -714,8 +698,39 @@ Click OK If Present
      Common.Click Button    ${next_locator}    Continue
 
     END
-    
-Scroll To Element
-        [Arguments]    ${ScrollElement}
-        Swipe Until Element is Visible  ${ScrollElement} direction=down max_swipes=5
-        ${is_visible}=    Run Keyword And Return Status  Wait Until Element Is Visible    ${ScrollElement}
+#sundar new method
+#Scroll Down And Click
+#        [Arguments]    ${ScrollElement}
+#      ${is_visible}=    Run Keyword And Return Status  Wait Until Element Is Visible    ${ScrollElement}    timeout=5s
+#      IF    not    ${is_visible}
+#          FOR    ${i}    IN RANGE    5
+#              Swipe    500    1200    500    400    500
+#              ${Status} =     Run Keyword And Return Status    Element Should Be Visible    ${ScrollElement}
+#              IF     ${Status}
+#                   Exit For Loop
+#              END
+#      END
+#      Click Element    ${ScrollElement}
+
+Scroll Down And Click
+    [Arguments]    ${ScrollElement}
+
+    ${is_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${ScrollElement}    timeout=5s
+
+    IF    not    ${is_visible}
+        FOR    ${i}    IN RANGE    5
+            Swipe    500    1200    500    400    500
+
+            ${is_visible}=    Run Keyword And Return Status      Wait Until Element Is Visible    ${ScrollElement}    timeout=1s
+
+            IF    ${is_visible}
+                Exit For Loop
+            END
+        END
+    END
+    # Final validation (important)
+    Wait Until Element Is Visible    ${ScrollElement}    timeout=5s
+    Click Element    ${ScrollElement}
+
+   #lInkable service methods Sundar
+

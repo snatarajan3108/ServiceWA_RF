@@ -211,7 +211,8 @@ Click Element With Details
             Wait for Element    ${ElementIdentifier}
             SeleniumLibrary.Click Element  ${ElementIdentifier}
         END
-        Write Extent Test Steps          Clicked on - ${ElementDetails}          Pass            True
+         Log to Console  Clicked on ${ElementDetails} Button
+#        Write Extent Test Steps          Clicked on - ${ElementDetails}          Pass            True
 #    EXCEPT
 #        Write Extent Test Steps          Failed to Click on Element: ${ElementDetails}           Fail            True
 #    END

@@ -135,7 +135,11 @@ Before login to App
         Log To Console    Executing in Android
     END
 
-    Common.Scroll To Given Element    ${GotIt}
+#    AppiumCommon.Scroll Down And Click    ${GotIt}
+      Swipe     0    495    0    150
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                    Swipe     0    495    0    150
     Common.Wait for Element Visibility    ${GotIt}   GotIt Button
     ${GotItButton_Visible} =   Run Keyword And Return Status  AppiumLibrary.Element Should Be Visible    ${GotIt}
     Log        GotIt Button Visibility : ${GotItButton_Visible}
@@ -146,20 +150,9 @@ Before login to App
     
     AppiumCommon.Click OK If Present     ${Ok}    ${Continue}    timeout=2s
 
-#     Common.Wait for Element Visibility    ${Continue}   Continue Button
-#     Swipe     0    495    0    150
-#     Common.Click Button    ${Continue}    Continue
-
-#    IF  "%{Device OS}" == "Android"
-#        Common.Wait for Element Visibility    ${Ok}   Ok Button
-#        Common.Click Button    ${Ok}    Ok
-#    ELSE
-#        Common.Wait for Element Visibility    ${Ok}   Ok Button
-#        Common.Click Button    ${Ok}    Ok
-#    END
 Login to the App
 
-     [Documentation]    link the FishCatchWA Mobile Application through Discovery
+     [Documentation]    Login to ServiceWA Mobile App
 #     [Arguments]    ${User Name}    ${Password}
 #
 #    Log        Inside ~ Login to the App

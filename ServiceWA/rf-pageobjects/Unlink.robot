@@ -10,40 +10,24 @@ Resource  ../rf-driverutils/AppiumCommon.robot
 
 *** Variables ***
 #Android
-#Common indentiFier Details
 ${LinkableServices}    ///android.view.View[@content-desc="Linkable services"]
+${FishCatchWA}        //android.view.View[@content-desc="FishCatchWA"]
 ${Next}    //android.widget.Button[@content-desc="Next"]
 ${IAgree}    //android.widget.Button[@content-desc="I Agree"]
-${Linked}    //android.view.View[@content-desc="Linked"]
-# FishCatchWA
-${FishCatchWA}        //android.view.View[@content-desc="FishCatchWA"]
 ${BackToServiceWA}    //android.widget.ImageView[@content-desc="ServiceWA"]
-# FuelWatch
-${FuelWatch}    //android.view.View[@content-desc="FuelWatch"]
-${AcceptLocationServices}    //android.widget.Button[@content-desc="Accept location services"]
-${FuelWatchBackToServiceWA}    //android.widget.Button[@content-desc="Back to ServiceWA"]
+${Linked}    //android.view.View[@content-desc="Linked"]
 
-
-# IOS
-#***Common IndentiFier details ***
+#IOS
+${ios_LinkableServices}    //XCUIElementTypeStaticText[@name="Linkable services"]
+${ios_FishCatchWA}        //XCUIElementTypeOther[@name="FishCatchWA"]
 ${ios_Next}    //XCUIElementTypeButton[@name="Next"]
 ${ios_IAgree}    //XCUIElementTypeButton[@name="I Agree"]
-${ios_Linked}    //XCUIElementTypeStaticText[@name="Linked"]
-${ios_LinkableServices}    //XCUIElementTypeStaticText[@name="Linkable services"]
-#FishCatch
-${ios_FishCatchWA}        //XCUIElementTypeOther[@name="FishCatchWA"]
 #${ios_BackToServiceWA}    //XCUIElementTypeImage[@name="ServiceWA"]
 #${ios_BackToServiceWA}    //XCUIElementTypeImage[@label="ServiceWA"]
 #${ios_BackToServiceWA}    //XCUIElementTypeImage[@name="ServiceWA" or @label="ServiceWA"]
 ${ios_BackToServiceWA}    accessibility_id=ServiceWA
 #${ios_BackToServiceWA}    //XCUIElementTypeApplication[@name="service double you ay"]/following-sibling::*[XCUIElementTypeImage[@name="ServiceWA"]]
-#FuelWatch
-${ios_FuelWatch}    //XCUIElementTypeOther[@name="FuelWatch"]
-${ios_AcceptLocationServices}    //XCUIElementTypeButton[@name="Accept location services"]
-${ios_FuelWatchBackToServiceWA}    //XCUIElementTypeButton[@name="Back to ServiceWA"]
-
-
-
+${ios_Linked}    //XCUIElementTypeStaticText[@name="Linked"]
 
 *** Keywords ***
 Link to the FishCatchWA
@@ -87,7 +71,7 @@ Link to the FishCatchWA
      Common.Wait for Element Visibility    ${IAgree}   IAgree Button
      Common.Element Should Be Enabled   ${IAgree}
      Common.Click Button    ${IAgree}    IAgree
-     
+
 #    Sleep    10s
     Swipe     495    0    150    0
     Swipe     495    0    150    0
@@ -105,53 +89,20 @@ Link to the FishCatchWA
      Element Name Should Be    ${FishCatchWA}   expected=FishCatchWA
      Element Name Should Be    ${Linked}   expected=Linked
 
-Link to the FuelWatch
-    [Documentation]    link the FuelWatch Mobile Application through Discovery
-    Log to console      Device OS : %{Device OS}
-    IF  "%{Device OS}" == "iOS"
-        Set iosLinkServiceWA xpathvalues to variables
-    ELSE
-        Log To Console    Executing in Android
-    END
-    Swipe     0    495    0    150
-     Common.Wait for Element Visibility    ${FuelWatch}    LinkableServices Button
-     Common.Click Button    ${LinkableServices}    LinkableServices
 
-    Common.Wait for Element Visibility    ${FuelWatch}   FuelWatch Button
-    ${FuelWatch_Visible} =   Run Keyword And Return Status  AppiumLibrary.Element Should Be Visible    ${FuelWatch}
-    Log        FuelWatch Button Visibility : ${FuelWatch_Visible}
-    Common.Click Button     ${FuelWatch}    FuelWatch Button
+#     Common.Wait for Element Visibility    ${FishCatchWA}   FishCatchWA Button
+#    ${FishCatchWA_Visible} =   Run Keyword And Return Status  AppiumLibrary.Element Should Be Visible    ${FishCatchWA}
+#    Log        FishCatchWA Button Visibility : ${FishCatchWA_Visible}
+#    Common.Click Button    ${FishCatchWA}    FishCatchWAButton
 
-    Common.Wait for Element Visibility    ${Next}   Next Button
-    Common.Click Button    ${Next}    Next
 
-        Swipe     0    495    0    150
-            Swipe     0    495    0    150
-                Swipe     0    495    0    150
-                    Swipe     0    495    0    150
-
-#     AppiumCommon.Swipe up screen Range     ${IAgree}
-     Common.Wait for Element Visibility    ${IAgree}   IAgree Button
-     Common.Element Should Be Enabled   ${IAgree}
-     Common.Click Button    ${IAgree}    IAgree
-     
-     
-     Common.Wait for Element Visibility    ${ios_AcceptLocationServices}   AcceptLocationService Button
-     Common.Element Should Be Enabled   ${ios_AcceptLocationServices}
-     Common.Click Button   ${ios_AcceptLocationServices}    AcceptLocationService
-
-    Common.Wait for Element Visibility    ${FuelWatchBackToServiceWA}    FuelWatchBackToServiceWA Button
-    Common.Element Should Be Enabled   ${FuelWatchBackToServiceWA}
-    Common.Click Button     ${FuelWatchBackToServiceWA}    BackButton
-
-     Common.Wait for Element Visibility    ${FuelWatch}    FuelWatch Button
-      Common.Element Should Be Enabled   ${FuelWatch}
-      Common.Wait for Element Visibility    ${Linked}    Linked Button
-
-     Element Name Should Be     ${FuelWatch}   expected=FuelWatch
-     Element Name Should Be    ${Linked}   expected=Linked
-     Log        FuelWatch link button changed to ${Linked}   : ${FuelWatch_Visible}
-
+##    Common.Click And Verify Element  ${BackToServiceWA}     ${FishCatchWA}
+##    Common.Click Mobile Element    ${BackToServiceWA}
+##    AppiumCommon.Click Mobile Element      ${BackToServiceWA}
+#     Common.Wait for Element Visibility    ${BackToServiceWA}   BackToServiceWA Button
+###   Common.Click Element With Details   ${BackToServiceWA}    BackToServiceWA
+#     Common.Element Should Be Enabled   ${BackToServiceWA}
+#     Common.Click Element     ${BackToServiceWA}
 
 
 
@@ -162,9 +113,10 @@ Set iosLinkServiceWA xpathvalues to variables
     Set Suite Variable      ${Next}    ${ios_Next}
     Set Suite Variable      ${IAgree}    ${ios_IAgree}
     Set Suite Variable      ${BackToServiceWA}    ${ios_BackToServiceWA}
-    Set Suite Variable      ${FuelWatch}     ${ios_FuelWatch}
-    Set Suite Variable      ${AcceptLocationServices}    ${ios_AcceptLocationServices}
-    Set Suite Variable      ${FuelWatchBackToServiceWA}    ${ios_FuelWatchBackToServiceWA}
     Set Suite Variable      ${Linked}    ${ios_Linked}
 
+#Methodservice
+#    &{linkeServicelist}
+#    ...    FishCatchWA=Next%%%I Agree
+#    ...    FuelWatch=Next%%%I Agree%%%Accept location services
 

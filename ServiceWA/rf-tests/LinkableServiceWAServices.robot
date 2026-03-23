@@ -16,7 +16,23 @@ Suite Teardown  Common.Close Application
 
 
 *** Test Cases ***
-Stability_TC_01_Mobile validate_ Linkable service FishCatchWA
+#Stability_TC_01_Mobile validate_ Linkable service FishCatchWA
+#        Log to Console  *************************************** User to Linkable service FishCatchWA from  Mobile app ***************************************
+#        [Tags]  Login001       Smoke      Regression
+#         &{prop}=    Load Config Properties Data
+#         &{TestData}=   Load Test Data From File   TestData.xlsx   ServiceWA  Login001
+#        log to console      Login001
+#        Set Environment Variable            TCID                    ${TestData.TestcaseID}
+#        #Skip If    "${TestData.Execute}" != "Y"    Test Not Selected for Execution
+#        Extent TestCaseHeader                 ${TEST NAME}        ${TestData.TestcaseID}          ServiceWA Application
+##        Log   DeviceName-> %{DEVICE_NAME}
+#        # Common.Launch Application    $File Path    $Sheet Name    $App Name
+#        Log      Launching Application
+#        Common.Launch Application     MobileConfig.xlsx   AppiumConfig  ${prop.App_URL}
+#        SignInScreen.Before login to App
+#        LinkableService.Link To The FishCatchWA
+
+Stability_TC_01_Mobile validate_ Linkable service FuelWatch
         Log to Console  *************************************** User to Linkable service FishCatchWA from  Mobile app ***************************************
         [Tags]  Login001       Smoke      Regression
          &{prop}=    Load Config Properties Data
@@ -29,9 +45,8 @@ Stability_TC_01_Mobile validate_ Linkable service FishCatchWA
         # Common.Launch Application    $File Path    $Sheet Name    $App Name
         Log      Launching Application
         Common.Launch Application     MobileConfig.xlsx   AppiumConfig  ${prop.App_URL}
-        SignInScreen.Before login to App    #username@servicewa.com    myPassword
-        LinkableService.Link To The FishCatchWA
-
+        SignInScreen.Before login to App
+        LinkableService.Link to the FuelWatch
 
 
 
