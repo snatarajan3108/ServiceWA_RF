@@ -44,6 +44,7 @@ Click Mobile Element
     [Arguments]    ${Element}
     Wait for Element    ${Element}
     AppiumLibrary.Wait Until Element Is Visible    ${Element}
+    log     ${Element}
     Element Should Be Enabled    ${Element}
     Wait Until Keyword Succeeds    ${RETRY COUNT}    ${RETRY WAIT}    Click Element    ${Element}
 
@@ -131,6 +132,18 @@ Wait for Element Visibility
 
 
 
+
+Enter Username Into App
+    [Arguments]  ${ElementIdentifier}
+    Common.Wait for Element Visibility    ${ElementIdentifier}    UserNameTextbox
+    AppiumLibrary.Input Text   ${ElementIdentifier}  TRANCHETWOABV@TestWapol.com.au
+
+Enter Credentials
+     [Arguments]  ${USER_ID_FIELD}      # Enters the user ID and password into the respective fields
+    Wait Until Page Contains Element    ${USER_ID_FIELD}    timeout=10s    # Wait for the element to be visible
+    Input Text    ${USER_ID_FIELD}
+
+
 Wait for Element
     [Documentation]    Keyword to Launch Application based on execution location, device type and required capablities
     [Arguments]  ${ElementIdentifier}
@@ -162,12 +175,13 @@ Element Should Be Enabled
         SeleniumLibrary.Element Should Be Enabled  ${ElementIdentifier}
     END
 
+
 Scroll To Given Element
     [Documentation]    Keyword to scroll to an element
     [Arguments]  ${ElementIdentifier}
     Wait for Element      ${ElementIdentifier}
     IF  "%{EXECUTION_PLATFORM}" == "Mobile"
-        #AppiumCommon.Scroll Element Into View  ${ElementIdentifier}
+        AppiumCommon.Scroll Element Into View  ${ElementIdentifier}
         Log to console      Scrolling to element
     ELSE
           SeleniumLibrary.Scroll Element Into View    ${ElementIdentifier}
@@ -180,6 +194,7 @@ Click Element
     IF  "%{EXECUTION_PLATFORM}" == "Mobile"
         Wait for Element    ${ElementIdentifier}
         AppiumLibrary.Click Element  ${ElementIdentifier}
+
     ELSE
         Wait for Element    ${ElementIdentifier}
         SeleniumLibrary.Click Element  ${ElementIdentifier}
@@ -197,7 +212,8 @@ Click Element With Details
             Wait for Element    ${ElementIdentifier}
             SeleniumLibrary.Click Element  ${ElementIdentifier}
         END
-        Write Extent Test Steps          Clicked on - ${ElementDetails}          Pass            True
+         Log to Console  Clicked on ${ElementDetails} Button
+#        Write Extent Test Steps          Clicked on - ${ElementDetails}          Pass            True
 #    EXCEPT
 #        Write Extent Test Steps          Failed to Click on Element: ${ElementDetails}           Fail            True
 #    END
@@ -222,8 +238,8 @@ Enter Text
     [Documentation]    Keyword to click element
     [Arguments]  ${ElementIdentifier}   ${ElementText}  ${ElementDetails}
     IF  "%{EXECUTION_PLATFORM}" == "Mobile"
-#        Wait for Element    ${ElementIdentifier}
-#        AppiumLibrary.Wait Until Page Contains Element  ${ElementIdentifier}
+        Wait for Element    ${ElementIdentifier}
+        AppiumLibrary.Wait Until Page Contains Element  ${ElementIdentifier}
 #        AppiumLibrary.Input Mobile Text       ${ElementIdentifier}   ${ElementText}
          AppiumLibrary.Input Text       ${ElementIdentifier}   ${ElementText}
     ELSE
@@ -332,3 +348,17 @@ Click And Verify No Redirection
     Wait Until Keyword Succeeds    3x    2s    Click Element    ${locator}
     # Verify we are still on the same page
     Element Should Be Visible    ${expected_page_id}    # No redirection occurred
+
+Click And Verify Element
+    [Arguments]    ${locator}    ${verification_locator}
+    AppiumLibrary.Wait Until Element Is Visible  ${locator}  timeout=10s
+    Common.Element Should Be Enabled  ${locator}  timeout=10s
+    Click Element  ${locator}
+    Wait Until Element Is Visible  ${verification_locator}  timeout=10s
+    # You could also use "Element Should Be Visible" if you are confident it will appear immediately after the wait
+
+Verify Element
+    [Arguments]    ${locator}    ${verification_locator}
+    AppiumLibrary.Wait Until Element Is Visible  ${locator}  timeout=10s
+    Wait Until Element Is Visible  ${verification_locator}  timeout=10s
+    # You could also use "Element Should Be Visible" if you are confident it will appear immediately after the wait

@@ -8,8 +8,6 @@ Resource    ../Resources/Common.robot
 #Resource    ../rf-pageobjects/HomeScreen.robot
 Resource  ../rf-driverutils/AppiumCommon.robot
 
-
-
 *** Variables ***
 # Android
 
@@ -41,17 +39,13 @@ ${SkipForNow}        //android.widget.Button[@content-desc="Skip for now"]
 ${YesSkip}        //android.widget.Button[@content-desc="Yes, skip"]
 ${LogOut}        //android.widget.Button[@content-desc="Log out"]
 ${Close}        //android.widget.Button[@content-desc="Close"]
+${Confirm}        //android.view.View[@content-desc="Inbox"]
 ${Home}        //android.view.View[@content-desc="Home"]
 ${Discovery}    //android.view.View[@content-desc="Discovery"]
 ${Passes}       //android.view.View[@content-desc="Passes"]
 ${Inbox}        //android.view.View[@content-desc="Inbox"]
 
-
-
-
-
 #${Inbox}    accessibility id=Inbox
-
 
 # ios
 ${ios_GotIt}        //XCUIElementTypeButton[@name="Got it"]
@@ -72,24 +66,23 @@ ${ios_SkipSetup}        //XCUIElementTypeButton[@name="Skip for now"]
 ${ios_myID}        //XCUIElementTypeStaticText[@name="myID"]
 #${ios_RememberMyChoice}        (//XCUIElementTypeSwitch[@name="Remember my choice (Not recommended for shared devices)"])[2]
 ${ios_SelectMyID}        //XCUIElementTypeButton[@name="Select myID"]
-${ios_EnterMyIDEmail}        //XCUIElementTypeTextField[@name="myID email"]
+${ios_EnterMyIDEmail}       //XCUIElementTypeTextField
+#${ios_EnterMyIDEmail}    //XCUIElementTypeTextField[@name="myID email"]
+#${ios_EnterMyIDEmail}    //XCUIElementTypeTextField[@label=""]
+#//XCUIElementTypeTextField[@name="myID email"]
 ${ios_GetCode}        //XCUIElementTypeButton[@name="Get code"]
 ${ios_VerifyEmail}        //XCUIElementTypeStaticText[@name="Email"]
 ${ios_Consent}        //XCUIElementTypeButton[@name="Consent"]
 ${ios_SkipForNow}        //XCUIElementTypeButton[@name="Skip for now"]
 ${ios_YesSkip}        //XCUIElementTypeButton[@name="Yes, skip"]
 ${ios_LogOut}        //XCUIElementTypeButton[@name="Log out"]
+${ios_Confirm}    //XCUIElementTypeButton[@name="Confirm"]
 ${ios_Close}        //XCUIElementTypeButton[@name="Close"]
 ${ios_Home}        //XCUIElementTypeStaticText[@name="Home"]
 ${ios_Discovery}    //XCUIElementTypeStaticText[@name="Discovery"]
 ${ios_Passes}       //XCUIElementTypeStaticText[@name="Passes"]
 ${ios_Inbox}        //XCUIElementTypeStaticText[@name="Inbox"]
 
-
-${WEB_Email}       //input[@type='email']
-${WEB_Password}       //input[@name='Password']
-${WEB_SignIn}       //input[contains(@value,'sign in')]
-${WEB_CurrentTemperature}       //a/p[3]
 
 *** Keywords ***
 Verify page loaded
@@ -120,7 +113,6 @@ Tap SignIn
     Log To Console    Tapped on SingIn Button
     Write Extent Test Steps          Tapped on SignIn Button                 Pass            True
 
-#Login to the App
 Before login to App
     [Documentation]    Keyword to Login to Mobile Application through Shopping Cart
 #    [Arguments]    ${User Name}    ${Password}
@@ -141,6 +133,12 @@ Before login to App
     ELSE
         Log To Console    Executing in Android
     END
+
+#    AppiumCommon.Scroll Down And Click    ${GotIt}
+      Swipe     0    495    0    150
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                    Swipe     0    495    0    150
     Common.Wait for Element Visibility    ${GotIt}   GotIt Button
     ${GotItButton_Visible} =   Run Keyword And Return Status  AppiumLibrary.Element Should Be Visible    ${GotIt}
     Log        GotIt Button Visibility : ${GotItButton_Visible}
@@ -148,110 +146,123 @@ Before login to App
 
     Common.Wait for Element Visibility    ${Done}   Done Button
     Common.Click Button    ${Done}    Done
-
-     Common.Wait for Element Visibility    ${Continue}   Continue Button
-     Swipe     0    495    0    150
-     Common.Click Button    ${Continue}    Continue
-
-#     Common.Wait for Element Visibility    ${GoToSettings}   GoToSettings Button
-#     Common.Click Button    ${GoToSettings}    GoToSettings
-
-#    Common.Wait for Element Visibility    ${Ok}   Ok Button
-#    Common.Click Button    ${Ok}    Ok
-
-#    Common.Wait for Element Visibility    ${AllowPopup}   AllowPopup Button
-#    Common.Click Button    ${AllowPopup}    AllowPopup
-
-
-
-#    IF  "%{Device OS}" == "Android"
-#        Common.Wait for Element Visibility    ${Ok}   Ok Button
-#        Common.Click Button    ${Ok}    Ok
-#    ELSE
-#        Common.Wait for Element Visibility    ${Ok}   Ok Button
-#        Common.Click Button    ${Ok}    Ok
-#    END
-
     
-#    Sleep   10s
-#
-#    AppiumCommon.Show Contexts
-#    Scroll To Given Element  ${Continue}
-#    Common.Wait for Element Visibility    ${Continue}   Continue Button
-#    Common.Click Button    ${Continue}    Continue
-#
-#    Sleep   10s
-
-
-#
-#    FOR    ${i}    IN RANGE    1    4
-#        ${popupVisible}=    Run Keyword And Return Status
-#        ...    Wait Until Element Is Visible    ${AllowPopup}    10s
-#        Log to Console        PopupVisibile: ${popupVisible}
-#        Run Keyword If    ${popupVisible}    Click Element    ${AllowPopup}
-#        Exit For Loop If    not ${popupVisible}
-#    END
-
-#    AppiumLibrary.Wait Until Element Is Visible    ${AllowPopup}    20s
-#    Common.Wait for Element Visibility    ${AllowPopup}   Allow Popup
-#    Common.Click Button    ${AllowPopup}    AllowPopup
-#
-
-
-##
-#    Scroll To Given Element  ${GoToSettings}
-#    Common.Wait for Element Visibility    ${GoToSettings}   Settings Icon
-#    Common.Click Button    ${GoToSettings}    GoToSettings
-#
-#    Common.Wait for Element Visibility    ${LoginToServiceWA}   LoginToServiceWA Button
-#    Common.Click Button    ${LoginToServiceWA}    LoginToServiceWA
-#
-#    Scroll Element Into View And Click        ${Agree}
-#    Common.Wait for Element Visibility    ${Agree}   Agree Button
-#    Common.Click Button    ${Agree}    AgreeButton
-#
-#    Common.Wait for Element Visibility    ${NextLoginCreateDigitalID}   Next Button
-#    Common.Click Button    ${NextLoginCreateDigitalID}    NextLoginCreateDigitalID
-#
-#    Common.Wait for Element Visibility    ${ReadyToBegin}   ReadyToBegin Button
-#    Common.Click Button    ${ReadyToBegin}    ReadyToBegin
-
-    
-#    AppiumCommon.Show Contexts
-
-#    Log to console  UserName:${User Name}, Password:${Password}
+    AppiumCommon.Click OK If Present     ${Ok}    ${Continue}    timeout=2s
 
 Login to the App
 
-     [Documentation]    link the FishCatchWA Mobile Application through Discovery
-     [Arguments]    ${User Name}    ${Password}
+     [Documentation]    Login to ServiceWA Mobile App
+#     [Arguments]    ${User Name}    ${Password}
+#
+#    Log        Inside ~ Login to the App
+#    Sleep    10    Wait for all context to be available
+#    ${contexts}    Get Contexts
+#    Log        Contexts:-${contexts}
+#    ${context}      Get Current Context
+#    ${STATUS}       Evaluate   "WEBVIEW" in """${context}"""
+#
+#    Log        Context: ${context}
+#    Log        Status : ${STATUS}
+#
+#    Log to console      Device OS : %{Device OS}
+#    IF  "%{Device OS}" == "iOS"
+#        Set iosServiceWA xpathvalues to variables
+#    ELSE
+#        Log To Console    Executing in Android
+#    END
+#    Swipe     0    495    0    150
+#    Common.Scroll To Given Element  ${GoToSettings}
+    Common.Wait for Element Visibility    ${GoToSettings}   Settings Icon
+    Common.Click Button    ${GoToSettings}    GoToSettings
 
-    Log        Inside ~ Login to the App
-    Sleep    10    Wait for all context to be available
-    ${contexts}    Get Contexts
-    Log        Contexts:-${contexts}
-    ${context}      Get Current Context
-    ${STATUS}       Evaluate   "WEBVIEW" in """${context}"""
-
-    Log        Context: ${context}
-    Log        Status : ${STATUS}
-
-    Log to console      Device OS : %{Device OS}
-    IF  "%{Device OS}" == "iOS"
-        Set iosLinkServiceWA xpathvalues to variables
-    ELSE
-        Log To Console    Executing in Android
-    END
+    Common.Wait for Element Visibility    ${LoginToServiceWA}   LoginToServiceWA Button
+    Common.Click Button    ${LoginToServiceWA}    LoginToServiceWA
     Swipe     0    495    0    150
-    Scroll To Given Element  ${GoToSettings}
-    Common.Wait for Element Visibility    ${GoToSettings}   Settings Icon
-    Common.Click Button    ${GoToSettings}    GoToSettings
-    Common.Wait for Element Visibility    ${GoToSettings}   Settings Icon
-    Common.Click Button    ${GoToSettings}    GoToSettings
-    
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                    Swipe     0    495    0    150
+
+#   Common.Scroll To Given Element   ${IAgree}
+    Common.Wait for Element Visibility    ${IAgree}   IAgree Button
+    Common.Element Should Be Enabled   ${IAgree}
+    Common.Click Button    ${IAgree}    IAgree
 
 
+    Common.Wait for Element Visibility    ${NextLoginCreateDigitalID}   Next Button
+    Common.Element Should Be Enabled   ${NextLoginCreateDigitalID}
+    Common.Click Button    ${NextLoginCreateDigitalID}    Next
 
+    Common.Wait for Element Visibility    ${ReadyToBegin}   ReadyToBegin Button
+    Common.Element Should Be Enabled   ${ReadyToBegin}
+    Common.Click Button    ${ReadyToBegin}    ReadyToBegin
+
+    Common.Wait for Element Visibility    ${ContinueWithDigitalID}   ContinueWithDigitalID Link
+    Common.Element Should Be Enabled   ${ContinueWithDigitalID}
+#    Common.Click Button    ${ContinueWithDigitalID}    ContinueWithDigitalID
+     Common.Click Mobile Element   ${ContinueWithDigitalID}
+
+
+      Swipe     0    495    0    150
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                    Swipe     0    495    0    150
+
+    Common.Wait for Element Visibility    ${SelectMyID}   SelectMyID Button
+    Common.Element Should Be Enabled   ${SelectMyID}
+    Common.Click Button    ${SelectMyID}    SelectMyID
+
+#     Wait Until Page Contains Element    ${EnterMyIDEmail}
+#     Common.Element Should Be Enabled   ${EnterMyIDEmail}
+#     Input Text    ${EnterMyIDEmail}     TRANCHETWOABV@TestWapol.com.au
+     
+#     Common.Enter Text     ${EnterMyIDEmail}  TRANCHETWOABV@TestWapol.com.au  EmailID
+     Sleep    10s
+     AppiumCommon.Wait for Element Present    ${EnterMyIDEmail}
+     Common.Click Element    ${EnterMyIDEmail}
+     AppiumLibrary.Input Text     ${EnterMyIDEmail}   TRANCHETWOABV@TestWapol.com.au
+     log     ${EnterMyIDEmail}
+#     AppiumLibrary.Input Text    id=0A000000-0000-0000-A905-000000000000    TRANCHETWOABV@TestWapol.com.au
+
+    Common.Wait for Element Visibility    ${GetCode}    SGetCode Button
+    Common.Element Should Be Enabled   ${GetCode}
+    Common.Click Button    ${GetCode}     GetCode
+
+        Swipe     0    495    0    150
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                  Swipe     0    495    0    150
+
+    Common.Wait for Element Visibility    ${Consent}     Consent Button
+    Common.Element Should Be Enabled   ${Consent}
+    Common.Click Button    ${Consent}      Consent
+
+    Swipe     0    495    0    150
+            Swipe     0    495    0    150
+                Swipe     0    495    0    150
+                  Swipe     0    495    0    150
+
+    Common.Wait for Element Visibility    ${SecondConsent}    FinalConsent Button
+    Common.Element Should Be Enabled   ${SecondConsent}
+    Common.Click Button    ${SecondConsent}       FinalConsent
+
+    Common.Wait for Element Visibility    ${Done}    Done Button
+    Common.Element Should Be Enabled   ${Done}
+    Common.Click Button    ${Done}       Done
+
+    Common.Wait for Element Visibility    ${SkipForNow}    SkipForNow Button
+    Common.Element Should Be Enabled   ${SkipForNow}
+    Common.Click Button    ${SkipForNow}       SkipForNow
+
+    Common.Wait for Element Visibility    ${YesSkip}    YesSkip Button
+    Common.Element Should Be Enabled   ${YesSkip}
+    Common.Click Button    ${YesSkip}       YesSkip
+
+    Common.Wait for Element Visibility    ${LogOut}    LogOut Button
+    Log to Console  Logout Element is present ${LogOut}
+
+#    Common.Wait for Element Visibility    ${Close}    Close Button
+#    Common.Element Should Be Enabled   ${Close}
+#    Common.Click Button    ${Close}       Close
 
 Check Element Locators to be use
     Log to console      Device OS : %{Device OS}
@@ -284,12 +295,34 @@ Perform logout from Consumer Potal
 
 Set iosServiceWA xpathvalues to variables
     Log To Console    *** overriding the Android keyword values to iOS ***
-    Set Suite Variable      ${GotIt}    ${ios_GotIt}
+    Set Suite Variable   ${GotIt}    ${ios_GotIt}
     Set Suite Variable      ${Done}    ${ios_Done}
     Set Suite Variable      ${Ok}    ${ios_Ok}
     Set Suite Variable      ${AllowPopup}    ${ios_AllowPopup}
     Set Suite Variable      ${Continue}    ${ios_Continue}
     Set Suite Variable      ${GoToSettings}    ${ios_GoToSettings}
+    Set Suite Variable      ${LoginToServiceWA}    ${ios_LoginToServiceWA}
+    Set Suite Variable      ${IAgree}    ${ios_IAgree}
+    Set Suite Variable      ${NextLoginCreateDigitalID}    ${ios_NextLoginCreateDigitalID}
+    Set Suite Variable      ${ReadyToBegin}    ${ios_ReadyToBegin}
+    Set Suite Variable      ${ContinueWithDigitalID}    ${ios_ContinueWithDigitalID}
+    Set Suite Variable      ${SkipSetup}    ${ios_SkipSetup}
+    Set Suite Variable      ${myID}    ${ios_myID}
+    Set Suite Variable      ${SelectMyID}    ${ios_SelectMyID}
+    Set Suite Variable      ${EnterMyIDEmail}    ${ios_EnterMyIDEmail}
+    Set Suite Variable      ${GetCode}    ${ios_GetCode}
+    Set Suite Variable      ${Consent}    ${ios_Consent}
+    Set Suite Variable      ${SecondConsent}    ${ios_Consent}
+    Set Suite Variable      ${SkipForNow}    ${ios_SkipForNow}
+    Set Suite Variable      ${YesSkip}    ${ios_YesSkip}
+    Set Suite Variable      ${LogOut}    ${ios_LogOut}
+    Set Suite Variable      ${Close}    ${ios_Close}
+    Set Suite Variable      ${Home}    ${ios_Home}
+    Set Suite Variable      ${Discovery}    ${ios_Discovery}
+    Set Suite Variable      ${Passes}    ${ios_Passes}
+    Set Suite Variable      ${Inbox}    ${ios_Inbox}
+    Set Suite Variable      ${Confirm}    ${ios_Confirm}
+
 
 
 

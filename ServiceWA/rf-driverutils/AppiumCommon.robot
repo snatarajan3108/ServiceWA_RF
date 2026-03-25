@@ -7,7 +7,7 @@ Resource        ../rf-utilities/DataUtility.robot
 Resource        ../rf-utilities/PropertyUtilities.robot
 Library         ../rf-utilities/ExtentReportListener.py
 Resource        ../rf-utilities/ExtentUtilityListener.robot
-#Library         ../rf-driverutils/AppiumEnhanceLibrary.py
+Library         ../rf-driverutils/AppiumEnhanceLibrary.py
 Library    SeleniumLibrary
 #Library         ../rf-utilities/AbhiTest.py
 Resource        ../Resources/Common.robot
@@ -103,7 +103,7 @@ Launch Mobile Application on BrowserStack
 
     Run Keyword If    "%{MOBILE_VIEW}" == "NA" and "${OS}" == "iOS" and "${Port}" == "0000"        Open Application    ${URL}    platformName=${OS}    platformVersion=${OS Version}    deviceName=${Device}    app=${App Path}    autoDismissAlerts=true    orientation=${orientation}    name=${TEST NAME}  cacheId=${Device}  newCommandTimeout=180
 #    Run Keyword If    "%{MOBILE_VIEW}" == "NA" and "${OS}" == "Android" and "${Port}" == "0000"    Open Application    ${URL}    platformName=${OS}    platformVersion=${OS Version}    deviceName=${Device}    app=${App Path}    autoGrantPermissions=true     name=${TEST NAME}  cacheId=${Device}     newCommandTimeout=180   orientation=${orientation}
-    Run Keyword If    "%{MOBILE_VIEW}" == "NA" and "${OS}" == "Android" and "${Port}" == "0000"    Open Application    ${REMOTE_URL}    app=${App Path}   name=${TEST NAME}    build=RobotFramework    platformName=${OS}    os_version=${OS Version}    deviceName=${Device}   autoGrantPermissions=false   autoDismissAlerts=true   interactiveDebugging=true
+    Run Keyword If    "%{MOBILE_VIEW}" == "NA" and "${OS}" == "Android" and "${Port}" == "0000"    Open Application    ${REMOTE_URL}    app=${App Path}   name=${TEST NAME}    build=RobotFramework    platformName=${OS}    os_version=${OS Version}    deviceName=${Device}   autoGrantPermissions=false    autoDismissAlerts=true     interactiveDebugging=true
 
     Log To Console  Launched Mobile App
 
@@ -121,22 +121,6 @@ Launch Mobile Application on BrowserStack
     
     Log        Context: ${context}
     Log        Status : ${STATUS}
-
-
-
-Launch Browser Test
-    [Documentation]    Wrapper keyword to Launch Chrome Browser in Developer Mode
-     [Arguments]  ${File Path}   ${Sheet Name}
-#    [Arguments]    ${Msg}               ${Flag}=False
-#    InitialSetup
-    Log To Console    Launching Chrome Browser in Developer Mode
-#    Open Browser  %{APP_URL}  %{BROWSER_TYPE}  options=add_argument("--ignore-certificate-errors")
-#    Log To console  Enabling View
-#    Open Browser    %{APP_URL}   browser=chrome  desired_capabilities=${desired_capabilities}
-    Open Browser  https://liidaveqa.com  Chrome  options=add_argument("--ignore-certificate-errors")
-    Maximize Browser Window
-    Log to console  Maximized the Browser
-    Sleep   10s
 
 Show Contexts
     [Documentation]    Print the Contexts
@@ -219,6 +203,13 @@ Convert Currency To Number
     ${Number Value}    Remove String    ${Currency Value}    $    ,    ${SPACE}
     ${Number Value}    Convert To Number    ${Number Value}
     RETURN    ${Number Value}
+    
+    
+Click the Image
+    [Arguments]    ${ImageClick}
+    ${Location} = Get Element Location  ${ImageClick}
+    AppiumLibrary.Click Element At Coordinates ${Location['X']}   ${Location['Y']}
+    
 
 Click Mobile Element
     [Documentation]    Wrapper Keyword for Click Element with Retry included
@@ -319,7 +310,7 @@ Verify Element Change
 Wait For Element Present
     [Documentation]    Wrapper Keyword for to validate the given element is present
     [Arguments]    ${Element}
-    Validate Document Ready State
+#    Validate Document Ready State
     AppiumLibrary.Wait Until Page Contains Element    ${Element}
     AppiumLibrary.Wait Until Element Is Visible    ${Element}
     ${STATUS}=     Run Keyword And Return Status    AppiumLibrary.Element Should Be Enabled    ${Element}
@@ -373,6 +364,22 @@ Click Enabled Element
     Wait Until Element Is Enabled    ${EnableElement}    timeout=10
     Click Element    ${EnableElement}
 
+
+Scroll Until Element Is Found
+    [Arguments]    ${locator}    ${max_swipes}=10
+    FOR    ${i}    IN RANGE    ${max_swipes}
+        ${element_found}=    Run Keyword And Ignore Error    AppiumLibrary.Wait Until Page Contains Element    ${locator}    timeout=1s
+        IF    '${element_found}'== 'PASS'
+            Log    Element found!
+            Return
+        END
+        # Swipe down by percentage (adjust coordinates as needed for vertical/horizontal scroll)
+        Swipe By Percent    50    80    50    20    1000
+    END
+    Fail    Element not found after ${max_swipes} swipes
+
+
+
 Scroll Element Into View
     [Documentation]  Wrapper keyword to scroll to given element and click on that element
     [Arguments]  ${element}
@@ -402,8 +409,10 @@ Refresh The Current Screen
 
 Swipe up screen Range
     [Arguments]     ${SwipElement}
-       FOR       ${counter}  IN RANGE    1 10
-     ${Isvisible}=    Common.Element Should Be Enabled   ${SwipElement}
+       FOR       ${counter}  IN RANGE    1    10
+     ${Isvisible}=    Run Keyword And Return Status    Common.Element Should Be Enabled    ${SwipElement}
+     log     ${Isvisible}
+#     ${Isvisible}=    Common.Element Should Be Enabled   ${SwipElement}
          IF       '${Isvisible}' ==     'True'
                     AppiumCommon.Swipe Up Screen
          Exit For Loop
@@ -674,3 +683,54 @@ Write Pass Results
     [Arguments]     ${Description}
         Log to console      PASSED: ${Description}
         Write Extent Test Steps         ${Description}      Pass        True
+
+#Sundar Method
+Click OK If Present
+    [Arguments]    ${ok_locator}    ${next_locator}    ${timeout}=2s
+    ${is_visible}=    Run Keyword And Return Status  Wait Until Element Is Visible    ${ok_locator}    ${timeout}
+    IF    ${is_visible}
+        Common.Click Element    ${ok_locator}
+        Log    OK button was present - clicked
+        
+    ELSE
+     Common.Wait for Element Visibility    ${next_locator}   Continue Button
+     Swipe     0    495    0    150
+     Common.Click Button    ${next_locator}    Continue
+
+    END
+#sundar new method
+#Scroll Down And Click
+#        [Arguments]    ${ScrollElement}
+#      ${is_visible}=    Run Keyword And Return Status  Wait Until Element Is Visible    ${ScrollElement}    timeout=5s
+#      IF    not    ${is_visible}
+#          FOR    ${i}    IN RANGE    5
+#              Swipe    500    1200    500    400    500
+#              ${Status} =     Run Keyword And Return Status    Element Should Be Visible    ${ScrollElement}
+#              IF     ${Status}
+#                   Exit For Loop
+#              END
+#      END
+#      Click Element    ${ScrollElement}
+
+Scroll Down And Click
+    [Arguments]    ${ScrollElement}
+
+    ${is_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${ScrollElement}    timeout=5s
+
+    IF    not    ${is_visible}
+        FOR    ${i}    IN RANGE    5
+            Swipe    500    1200    500    400    500
+
+            ${is_visible}=    Run Keyword And Return Status      Wait Until Element Is Visible    ${ScrollElement}    timeout=1s
+
+            IF    ${is_visible}
+                Exit For Loop
+            END
+        END
+    END
+    # Final validation (important)
+    Wait Until Element Is Visible    ${ScrollElement}    timeout=5s
+    Click Element    ${ScrollElement}
+
+   #lInkable service methods Sundar
+
