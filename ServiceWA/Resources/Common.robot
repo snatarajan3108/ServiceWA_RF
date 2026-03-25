@@ -194,6 +194,7 @@ Click Element
     IF  "%{EXECUTION_PLATFORM}" == "Mobile"
         Wait for Element    ${ElementIdentifier}
         AppiumLibrary.Click Element  ${ElementIdentifier}
+
     ELSE
         Wait for Element    ${ElementIdentifier}
         SeleniumLibrary.Click Element  ${ElementIdentifier}

@@ -32,23 +32,23 @@ Stability_TC_01_Mobile Before login Steps
         Common.Launch Application     MobileConfig.xlsx   AppiumConfig  ${prop.App_URL}
         SignInScreen.Before login to App
 
-#Stability_TC_02_Mobile Validation of login
-#        Log to Console  *************************************** User to perform Login & logout from  Mobile app ***************************************
-#        [Tags]  Login002       Smoke      Regression
-#         &{prop}=    Load Config Properties Data
-#         &{TestData}=   Load Test Data From File   TestData.xlsx   ServiceWA  Login002
-#        log to console      Login002
-#        Set Environment Variable            TCID                    ${TestData.TestcaseID}
-#        #Skip If    "${TestData.Execute}" != "Y"    Test Not Selected for Execution
-#        Extent TestCaseHeader                 ${TEST NAME}        ${TestData.TestcaseID}          ServiceWA Application
-##        Log   DeviceName-> %{DEVICE_NAME}
-#        # Common.Launch Application    $File Path    $Sheet Name    $App Name
-#        Log      Launching Application
-#        Common.Launch Application     MobileConfig.xlsx   AppiumConfig  ${prop.App_URL}
-#        SignInScreen.Before login to App
-#        SignInScreen.Login to the App    #username@servicewa.com    myPassword
+Stability_TC_02_Mobile Validation of login
+        Log to Console  *************************************** User to perform Login & logout from  Mobile app ***************************************
+        [Tags]  Login002       Smoke      Regression
+         &{prop}=    Load Config Properties Data
+         &{TestData}=   Load Test Data From File   TestData.xlsx   ServiceWA  Login002
+        log to console      Login002
+        Set Environment Variable            TCID                    ${TestData.TestcaseID}
+        #Skip If    "${TestData.Execute}" != "Y"    Test Not Selected for Execution
+        Extent TestCaseHeader                 ${TEST NAME}        ${TestData.TestcaseID}          ServiceWA Application
+#        Log   DeviceName-> %{DEVICE_NAME}
+        # Common.Launch Application    $File Path    $Sheet Name    $App Name
+        Log      Launching Application
+        Common.Launch Application     MobileConfig.xlsx   AppiumConfig  ${prop.App_URL}
+        SignInScreen.Before login to App
+        SignInScreen.Login to the App    #username@servicewa.com    myPassword
 
-Stability_TC_02_Mobile Validation of Login and logout
+Stability_TC_02_Mobile Validation of logout
         Log to Console  *************************************** User to perform Login & logout from  Mobile app ***************************************
         [Tags]  Login003       Smoke      Regression
          &{prop}=    Load Config Properties Data
@@ -75,4 +75,29 @@ Stability_TC_02_Mobile Validation of Login and logout
         Log to Console  GotIt Element is present ${GotIt}
         Common.Click Button    ${GotIt}    GotIt
 
-        
+Stability_TC_02_Mobile Validation of Login and logout
+        Log to Console  *************************************** User to perform Login & logout from  Mobile app ***************************************
+        [Tags]  Login004         Smoke      Regression
+         &{prop}=    Load Config Properties Data
+         &{TestData}=   Load Test Data From File   TestData.xlsx   ServiceWA  Login003
+        log to console      Login003
+        Set Environment Variable            TCID                    ${TestData.TestcaseID}
+        #Skip If    "${TestData.Execute}" != "Y"    Test Not Selected for Execution
+        Extent TestCaseHeader                 ${TEST NAME}        ${TestData.TestcaseID}          ServiceWA Application
+#        Log   DeviceName-> %{DEVICE_NAME}
+        # Common.Launch Application    $File Path    $Sheet Name    $App Name
+        Log      Launching Application
+        Common.Launch Application     MobileConfig.xlsx   AppiumConfig  ${prop.App_URL}
+        SignInScreen.Before login to App
+        SignInScreen.Login to the App    #username@servicewa.com    myPassword
+        Common.Wait for Element Visibility    ${LogOut}    LogOut Button
+        Log to Console  Logout Element is present ${LogOut}
+        Common.Click Button    ${LogOut}    LogOut
+
+        Common.Wait for Element Visibility    ${Confirm}    Confirm Button
+        Log to Console  Confirm Element is present ${Confirm}
+        Common.Click Button    ${Confirm}    Confirm
+
+        Common.Wait for Element Visibility    ${GotIt}   GotIt Icon
+        Log to Console  GotIt Element is present ${GotIt}
+        Common.Click Button    ${GotIt}    GotIt

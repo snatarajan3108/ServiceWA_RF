@@ -113,7 +113,6 @@ Tap SignIn
     Log To Console    Tapped on SingIn Button
     Write Extent Test Steps          Tapped on SignIn Button                 Pass            True
 
-#Login to the App
 Before login to App
     [Documentation]    Keyword to Login to Mobile Application through Shopping Cart
 #    [Arguments]    ${User Name}    ${Password}
